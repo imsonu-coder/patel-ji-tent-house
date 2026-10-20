@@ -33,9 +33,38 @@ export default function ItemsPage() {
   const filteredItems = useMemo(() => {
     let nextItems = [...items];
 
-    if (selectedCategory !== 'All') {
-      nextItems = nextItems.filter((item) => item.category?.name === selectedCategory || item.category === selectedCategory);
-    }
+    
+if (selectedCategory !== 'All') {
+  
+const categoryAliases = {
+  Tents: ['tent', 'canopies'],
+  Furniture: ['furniture'],
+  Lighting: ['lighting'],
+  Decoration: ['lighting', 'decoration', 'decor'],
+  Stage: ['stage'],
+  Catering: ['catering'],
+  Other: ['other'],
+};
+
+
+  const keywords = categoryAliases[selectedCategory] || [
+    selectedCategory.toLowerCase(),
+  ];
+
+  nextItems = nextItems.filter((item) => {
+    const categoryName =
+      typeof item.category === 'object'
+        ? item.category?.name || ''
+        : item.category || '';
+
+    const normalizedName = categoryName.toLowerCase();
+
+    return keywords.some((keyword) =>
+      normalizedName.includes(keyword)
+    );
+  });
+}
+
 
     if (search) {
       nextItems = nextItems.filter((item) =>

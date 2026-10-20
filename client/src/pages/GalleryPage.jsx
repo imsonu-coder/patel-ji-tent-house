@@ -7,14 +7,22 @@ export default function GalleryPage() {
   const [images, setImages] = useState([]);
   const [selected, setSelected] = useState(null);
   const [category, setCategory] = useState('All');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchGallery = async () => {
+  const fetchGallery = async () => {
+    try {
       const { data } = await api.get('/gallery');
       setImages(data);
-    };
-    fetchGallery();
-  }, []);
+    } catch (error) {
+      console.error('Failed to load gallery:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchGallery();
+}, []);
 
   const filteredImages = category === 'All' ? images : images.filter((image) => image.category === category);
 
@@ -32,6 +40,17 @@ export default function GalleryPage() {
           </button>
         ))}
       </div>
+      {loading && (
+  <p className="mb-6 text-center text-[#806C66]">
+    Loading gallery...
+  </p>
+)}
+
+{!loading && filteredImages.length === 0 && (
+  <p className="mb-6 text-center text-[#806C66]">
+    No photos found in this category yet.
+  </p>
+)}
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filteredImages.map((image) => (

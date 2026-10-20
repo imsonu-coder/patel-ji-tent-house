@@ -1,0 +1,83 @@
+
+require('dotenv').config({
+  path: require('path').resolve(__dirname, '../.env')
+});
+
+const mongoose = require('mongoose');
+const connectDB = require('../config/db');
+const GalleryImage = require('../models/GalleryImage');
+
+const demoGallery = [
+  {
+    title: 'Royal Wedding Celebration',
+    category: 'Weddings',
+    description: 'Elegant wedding arrangements for a memorable celebration.',
+    imageUrl: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=85'
+  },
+  {
+    title: 'Traditional Wedding Tent',
+    category: 'Tents',
+    description: 'A beautiful tent setup for weddings and family events.',
+    imageUrl: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=85'
+  },
+  {
+    title: 'Floral Stage Decoration',
+    category: 'Decoration',
+    description: 'Decorative stage styling for wedding ceremonies.',
+    imageUrl: 'https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1200&q=85'
+  },
+  {
+    title: 'Evening Event Lighting',
+    category: 'Lighting',
+    description: 'Lighting ideas to create a warm event atmosphere.',
+    imageUrl: 'https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=85'
+  },
+  {
+    title: 'Wedding Reception Setup',
+    category: 'Furniture',
+    description: 'A welcoming reception arrangement for guests.',
+    imageUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85'
+  },
+  {
+    title: 'Festive Event Ambience',
+    category: 'Other',
+    description: 'Inspiration for festive gatherings and special occasions.',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=85'
+  }
+];
+
+async function addDemoGallery() {
+  try {
+    await connectDB();
+
+    let added = 0;
+    let skipped = 0;
+
+    for (const entry of demoGallery) {
+      const existing = await GalleryImage.findOne({ title: entry.title });
+
+      if (existing) {
+        skipped++;
+        continue;
+      }
+
+      await GalleryImage.create({
+        ...entry,
+        status: 'active'
+      });
+
+      added++;
+    }
+
+    console.log(
+      `Gallery setup complete. Added: ${added}; skipped existing: ${skipped}.`
+    );
+  } catch (error) {
+    console.error('Could not add demo gallery:', error.message);
+    process.exitCode = 1;
+  } finally {
+    await mongoose.disconnect();
+  }
+}
+
+addDemoGallery();
