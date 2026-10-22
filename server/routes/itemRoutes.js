@@ -77,10 +77,37 @@ router.put('/:id', authenticate, requireAdmin, async (req, res) => {
       return res.status(404).json({ message: 'Item not found.' });
     }
 
-    const updates = req.body;
-    Object.assign(item, updates);
-    await item.save();
-    res.json(item);
+    const allowedFields = [
+  'name',
+  'category',
+  'description',
+  'images',
+  'basePrice',
+  'priceUnit',
+  'ownStock',
+  'status'
+];
+
+for (const field of allowedFields) {
+  if (req.body[field] !== undefined) {
+    item[field] = req.body[field];
+  }
+}
+
+if (req.body.ownStock !== undefined) {
+  const stock = Number(req.body.ownStock);
+
+  if (!Number.isInteger(stock) || stock < 0) {
+    return res.status(400).json({
+      message: 'Stock must be a non-negative whole number.'
+    });
+  }
+
+  item.ownStock = stock;
+}
+
+await item.save();
+res.json(item);
   } catch (error) {
     res.status(500).json({ message: 'Unable to update item.', error: error.message });
   }
