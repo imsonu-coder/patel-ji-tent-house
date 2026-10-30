@@ -10,6 +10,7 @@ const asyncHandler = require('../middleware/asyncHandler');
 const { normalizeDateRange } = require('../services/inventoryService');
 const { buildInventoryDashboard } = require('../services/inventoryDashboardService');
 const {
+  isObjectId,
   parsePagination,
   sendPaginatedList
 } = require('../utils/httpValidation');
@@ -105,6 +106,62 @@ router.get('/inspections', authenticate, requireAdmin, asyncHandler(async (req, 
   ]);
 
   return sendPaginatedList(res, inspections, pagination, total);
+}));
+
+router.post('/inspections', authenticate, requireAdmin, asyncHandler(async (req, res) => {
+  const { bookingId, itemId, returnedQuantity, inspectionOutcome, notes } = req.body;
+  if (!isObjectId(bookingId) || !isObjectId(itemId)) {
+    return res.status(400).json({ message: 'Valid booking and item IDs are required.' });
+  }
+  const qty = parseInt(returnedQuantity, 10);
+  if (!Number.isInteger(qty) || qty < 1) {
+    return res.status(400).json({ message: 'Returned quantity must be at least 1.' });
+  }
+  if (!['Passed', 'Failed', 'Damaged', 'NeedsRepair'].includes(inspectionOutcome)) {
+    return res.status(400).json({ message: 'Invalid inspection outcome.' });
+  }
+
+  const [booking, item] = await Promise.all([
+    Booking.findById(bookingId),
+    Item.findById(itemId)
+  ]);
+  if (!booking) return res.status(404).json({ message: 'Booking not found.' });
+  if (!item) return res.status(404).json({ message: 'Item not found.' });
+
+  let reservation = await InventoryReservation.findOne({ booking: booking._id, item: item._id });
+  if (!reservation) {
+    reservation = await InventoryReservation.create({
+      booking: booking._id,
+      item: item._id,
+      quantity: qty,
+      eventDates: booking.eventDates || { start: new Date(), end: new Date() },
+      source: 'Owned'
+    });
+  }
+
+  const isPassed = inspectionOutcome === 'Passed';
+  const inspection = await InventoryReturnInspection.create({
+    booking: booking._id,
+    reservation: reservation._id,
+    item: item._id,
+    returnedQuantity: qty,
+    inspectionOutcome,
+    inspectedBy: req.user._id,
+    inspectedAt: new Date(),
+    notes: typeof notes === 'string' ? notes.trim() : '',
+    releaseStatus: isPassed ? 'Released' : 'NotReleased',
+    releasedQuantity: isPassed ? qty : 0,
+    releasedAt: isPassed ? new Date() : undefined,
+    releasedBy: isPassed ? req.user._id : undefined,
+    isSynthetic: false
+  });
+
+  const populated = await InventoryReturnInspection.findById(inspection._id)
+    .populate('item', 'name')
+    .populate('booking', 'bookingId')
+    .populate('inspectedBy', 'name');
+
+  return res.status(201).json(populated);
 }));
 
 module.exports = router;

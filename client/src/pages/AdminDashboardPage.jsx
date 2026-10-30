@@ -154,6 +154,19 @@ export default function AdminDashboardPage() {
   const [inspectionsPageSize] = useState(10);
   const [inspectionsTotal, setInspectionsTotal] = useState(0);
   const [inspectionsTotalPages, setInspectionsTotalPages] = useState(1);
+  const [showInspectionModal, setShowInspectionModal] = useState(false);
+  const [recordingInspection, setRecordingInspection] = useState(false);
+  const [inspectionError, setInspectionError] = useState('');
+  const [inspectionForm, setInspectionForm] = useState({
+    bookingId: '',
+    itemId: '',
+    returnedQuantity: 1,
+    inspectionOutcome: 'Passed',
+    notes: ''
+  });
+  const [modalBookings, setModalBookings] = useState([]);
+  const [modalItems, setModalItems] = useState([]);
+  const [modalDataLoading, setModalDataLoading] = useState(false);
 
   // ==========================================
   // NEW: CLIENT-SIDE MANAGEMENT (ITEMS & GALLERY)
@@ -495,6 +508,31 @@ export default function AdminDashboardPage() {
     return () => { cancelled = true; };
   }, [authLoading, user, activeTab, inspectionsPage, inspectionsPageSize, scope]);
 
+  // Load Bookings and Items when Inspection Modal opens
+  useEffect(() => {
+    if (!showInspectionModal) return undefined;
+    let cancelled = false;
+    const loadModalOptions = async () => {
+      setModalDataLoading(true);
+      try {
+        const [bookingsRes, itemsRes] = await Promise.all([
+          api.get('/admin/bookings', { params: { pageSize: 100, scope: 'all' } }),
+          api.get('/items', { params: { pageSize: 100, status: 'all', scope: 'all' } })
+        ]);
+        if (!cancelled) {
+          setModalBookings(bookingsRes.data || []);
+          setModalItems(itemsRes.data || []);
+        }
+      } catch (err) {
+        console.error('Failed to load inspection modal options:', err);
+      } finally {
+        if (!cancelled) setModalDataLoading(false);
+      }
+    };
+    loadModalOptions();
+    return () => { cancelled = true; };
+  }, [showInspectionModal]);
+
   // Load Catalog Items for Admin Management
   useEffect(() => {
     if (authLoading || !user || user.role !== 'admin' || activeTab !== 'items') return undefined;
@@ -767,6 +805,30 @@ export default function AdminDashboardPage() {
       setError(err.response?.data?.message || 'Pending booking could not be cancelled.');
     } finally {
       setUpdatingBookingId('');
+    }
+  };
+
+  const handleRecordInspection = async (e) => {
+    e.preventDefault();
+    setInspectionError('');
+    setRecordingInspection(true);
+    try {
+      const { data } = await api.post('/admin/inventory/inspections', inspectionForm);
+      setInspections((prev) => [data, ...prev]);
+      setInspectionsTotal((prev) => prev + 1);
+      setShowInspectionModal(false);
+      setInspectionForm({
+        bookingId: '',
+        itemId: '',
+        returnedQuantity: 1,
+        inspectionOutcome: 'Passed',
+        notes: ''
+      });
+      setSuccessMessage('Return inspection recorded and inventory updated successfully!');
+    } catch (err) {
+      setInspectionError(err.response?.data?.message || 'Failed to record return inspection.');
+    } finally {
+      setRecordingInspection(false);
     }
   };
 
@@ -2091,12 +2153,24 @@ export default function AdminDashboardPage() {
       {/* ============================================================== */}
       {activeTab === 'inspections' && (
         <section className="rounded-2xl border border-[#E7CC91] bg-white p-6 shadow-soft">
-          <div className="mb-6">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6B1E2B]">Warehouse Operations</div>
-            <h2 className="mt-1 font-[Playfair_Display] text-3xl text-[#33201D]">Post-Event Return & Quality Control</h2>
-            <p className="mt-1 text-sm text-[#806C66]">
-              All returned equipment undergoes formal inspection before release back to active stock. Damaged items remain quarantined.
-            </p>
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6B1E2B]">Warehouse Operations</div>
+              <h2 className="mt-1 font-[Playfair_Display] text-3xl text-[#33201D]">Post-Event Return & Quality Control</h2>
+              <p className="mt-1 text-sm text-[#806C66]">
+                All returned equipment undergoes formal inspection before release back to active stock. Damaged items remain quarantined.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setInspectionError('');
+                setShowInspectionModal(true);
+              }}
+              className="inline-flex items-center gap-2 rounded-full bg-[#6B1E2B] px-5 py-2.5 text-xs font-semibold text-white shadow-soft transition hover:bg-[#45121C]"
+            >
+              <Plus size={15} /> Record Return Inspection
+            </button>
           </div>
 
           <div className="overflow-x-auto rounded-xl border border-[#F0D7AF] bg-white">
@@ -2162,6 +2236,187 @@ export default function AdminDashboardPage() {
             onPageChange={setInspectionsPage}
             className="mt-4"
           />
+
+          {/* Record Return Inspection Modal */}
+          {showInspectionModal && (
+            <div
+              role="dialog"
+              aria-modal="true"
+              className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/60 p-4 backdrop-blur-xs"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) setShowInspectionModal(false);
+              }}
+            >
+              <div className="relative my-auto w-full max-w-lg rounded-3xl border border-[#E6D3AD] bg-[#FFFDF9] p-6 shadow-2xl">
+                <div className="flex items-center justify-between border-b border-[#F0D7AF] pb-4">
+                  <div>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#6B1E2B]">
+                      Warehouse Quality Control
+                    </span>
+                    <h3 className="font-[Playfair_Display] text-2xl font-bold text-[#33201D]">
+                      Record Return Inspection
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowInspectionModal(false)}
+                    className="rounded-full p-2 text-[#806C66] hover:bg-[#F0D7AF]/40 hover:text-[#33201D]"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+
+                <form onSubmit={handleRecordInspection} className="mt-5 space-y-4">
+                  {modalDataLoading && (
+                    <div className="rounded-xl bg-[#FFF8ED] p-3 text-center text-xs font-medium text-[#6B1E2B]">
+                      Loading active bookings and catalogue items...
+                    </div>
+                  )}
+
+                  <div>
+                    <label className="block text-xs font-semibold text-[#33201D] mb-1">
+                      Associated Booking
+                    </label>
+                    <select
+                      required
+                      disabled={modalDataLoading}
+                      value={inspectionForm.bookingId}
+                      onChange={(e) => {
+                        const chosenBookingId = e.target.value;
+                        const b = modalBookings.find((entry) => entry._id === chosenBookingId);
+                        const firstItemId = b?.items?.[0]?.item?._id || b?.items?.[0]?.item || '';
+                        const firstItemQty = b?.items?.[0]?.quantity || 1;
+                        setInspectionForm({
+                          ...inspectionForm,
+                          bookingId: chosenBookingId,
+                          itemId: firstItemId,
+                          returnedQuantity: firstItemQty
+                        });
+                      }}
+                      className="min-h-11 w-full rounded-xl border border-[#D7B46B] bg-white px-3 text-sm text-[#33201D] outline-none"
+                    >
+                      <option value="">{modalDataLoading ? 'Loading bookings...' : 'Select a Booking Reference'}</option>
+                      {modalBookings.map((b) => (
+                        <option key={b._id} value={b._id}>
+                          {b.bookingId} — {b.customer?.name || 'Customer'} ({b.status})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-[#33201D] mb-1">
+                      Rental Item to Inspect
+                    </label>
+                    <select
+                      required
+                      disabled={modalDataLoading}
+                      value={inspectionForm.itemId}
+                      onChange={(e) => setInspectionForm({ ...inspectionForm, itemId: e.target.value })}
+                      className="min-h-11 w-full rounded-xl border border-[#D7B46B] bg-white px-3 text-sm text-[#33201D] outline-none"
+                    >
+                      <option value="">{modalDataLoading ? 'Loading items...' : 'Select an Item to Inspect'}</option>
+                      {(() => {
+                        const selBooking = modalBookings.find((b) => b._id === inspectionForm.bookingId);
+                        const itemsList = (selBooking?.items && selBooking.items.length > 0)
+                          ? selBooking.items.map((it) => ({
+                              _id: it.item?._id || it.item,
+                              name: it.itemName || it.item?.name || 'Rented Item',
+                              quantity: it.quantity
+                            }))
+                          : modalItems;
+                        return itemsList.map((item) => (
+                          <option key={item._id} value={item._id}>
+                            {item.name} {item.quantity ? `(${item.quantity} units rented)` : (item.category?.name ? `(${item.category.name})` : '')}
+                          </option>
+                        ));
+                      })()}
+                    </select>
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-xs font-semibold text-[#33201D] mb-1">
+                        Returned Quantity
+                      </label>
+                      <input
+                        type="number"
+                        min="1"
+                        required
+                        value={inspectionForm.returnedQuantity}
+                        onChange={(e) => setInspectionForm({ ...inspectionForm, returnedQuantity: e.target.value })}
+                        className="min-h-11 w-full rounded-xl border border-[#D7B46B] bg-white px-3 text-sm text-[#33201D] outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-[#33201D] mb-1">
+                        Inspection Outcome
+                      </label>
+                      <select
+                        value={inspectionForm.inspectionOutcome}
+                        onChange={(e) => setInspectionForm({ ...inspectionForm, inspectionOutcome: e.target.value })}
+                        className="min-h-11 w-full rounded-xl border border-[#D7B46B] bg-white px-3 text-sm font-semibold text-[#33201D] outline-none"
+                      >
+                        <option value="Passed">Passed (Good Condition)</option>
+                        <option value="NeedsRepair">Needs Repair (Minor Damage)</option>
+                        <option value="Damaged">Damaged (Broken / Ruined)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl bg-[#FFF8ED] p-3 text-xs text-[#806C66]">
+                    {inspectionForm.inspectionOutcome === 'Passed' ? (
+                      <span className="text-[#2E7D32] font-medium">
+                        ✓ Units will be immediately <strong>Released</strong> back to active warehouse stock.
+                      </span>
+                    ) : (
+                      <span className="text-[#C62828] font-medium">
+                        ⚠ Units will be <strong>Quarantined / Held</strong> to prevent double-booking until repaired.
+                      </span>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-[#33201D] mb-1">
+                      Inspection Notes (Optional)
+                    </label>
+                    <textarea
+                      rows="2"
+                      placeholder="e.g. Scratched frame, cleaned and disinfected, tear on upper seam"
+                      value={inspectionForm.notes}
+                      onChange={(e) => setInspectionForm({ ...inspectionForm, notes: e.target.value })}
+                      className="w-full rounded-xl border border-[#D7B46B] bg-white p-3 text-sm text-[#33201D] outline-none"
+                    />
+                  </div>
+
+                  {inspectionError && (
+                    <p role="alert" className="rounded-xl bg-[#FFF3F0] p-3 text-xs text-[#702721]">
+                      {inspectionError}
+                    </p>
+                  )}
+
+                  <div className="mt-5 flex justify-end gap-3 pt-3 border-t border-[#F0D7AF]">
+                    <button
+                      type="button"
+                      onClick={() => setShowInspectionModal(false)}
+                      disabled={recordingInspection}
+                      className="rounded-full border border-[#6B1E2B] px-5 py-2 text-xs font-semibold text-[#6B1E2B]"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={recordingInspection}
+                      className="rounded-full bg-[#6B1E2B] px-6 py-2 text-xs font-semibold text-white shadow-soft hover:bg-[#45121C] disabled:opacity-60"
+                    >
+                      {recordingInspection ? 'Recording...' : 'Record Inspection'}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
         </section>
       )}
     </div>
