@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
       try {
         const { data } = await api.get('/auth/me');
         setUser(data.user);
-      } catch (error) {
+      } catch {
         localStorage.removeItem('pjth_token');
         setToken('');
         setUser(null);
@@ -61,4 +61,5 @@ export function AuthProvider({ children }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
+// oxlint-disable-next-line react/only-export-components
 export const useAuth = () => useContext(AuthContext);

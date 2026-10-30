@@ -23,25 +23,50 @@ export function EventProvider({ children }) {
     localStorage.setItem('pjth_event_cart', JSON.stringify(selectedItems));
   }, [selectedItems]);
 
-  const addItem = (item) => {
+  const addItem = (item, requestedQuantity = 1) => {
+    const quantity = Number(requestedQuantity);
+    if (
+      !item ||
+      typeof item._id !== 'string' ||
+      !item._id ||
+      typeof item.name !== 'string' ||
+      !item.name.trim() ||
+      !Number.isInteger(quantity) ||
+      quantity < 1 ||
+      !Number.isFinite(Number(item.basePrice))
+    ) {
+      return false;
+    }
+
     setSelectedItems((current) => {
-      const existing = current.find((entry) => entry.itemId === item._id);
-      if (existing) {
-        return current.map((entry) =>
-          entry.itemId === item._id ? { ...entry, quantity: entry.quantity + 1 } : entry
+      const matchingItems = current.filter((entry) => entry.itemId === item._id);
+      if (matchingItems.length > 0) {
+        const existingQuantity = matchingItems.reduce(
+          (sum, entry) => sum + (Number(entry.quantity) || 0),
+          0
         );
+        let updatedExistingItem = false;
+
+        return current.flatMap((entry) => {
+          if (entry.itemId !== item._id) return [entry];
+          if (updatedExistingItem) return [];
+
+          updatedExistingItem = true;
+          return [{ ...entry, quantity: existingQuantity + quantity }];
+        });
       }
       return [
         ...current,
         {
           itemId: item._id,
           name: item.name,
-          price: item.basePrice,
-          image: item.images?.[0] || 'https://images.unsplash.com/photo-1520854221256-17451cc331bf',
-          quantity: 1
+          price: Number(item.basePrice),
+          image: (Array.isArray(item.images) ? item.images[0] : '') || '',
+          quantity
         }
       ];
     });
+    return true;
   };
 
   const updateQuantity = (itemId, delta) => {
@@ -78,4 +103,5 @@ export function EventProvider({ children }) {
   return <EventContext.Provider value={value}>{children}</EventContext.Provider>;
 }
 
+// oxlint-disable-next-line react/only-export-components
 export const useEvent = () => useContext(EventContext);

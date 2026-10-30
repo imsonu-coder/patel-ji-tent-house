@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { EventProvider } from './context/EventContext';
 import AboutPage from './pages/AboutPage';
 import BuildEventPage from './pages/BuildEventPage';
+import CartPage from './pages/CartPage';
 import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
 import HomePage from './pages/HomePage';
@@ -23,7 +24,7 @@ function ProtectedRoute({ children, allow = 'all', redirectTo = '/login' }) {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <div className="mx-auto max-w-7xl px-4 py-12 text-[#806C66] sm:px-6 lg:px-8">Loading...</div>;
+    return <div role="status" className="mx-auto max-w-7xl px-4 py-12 text-[#604d47] sm:px-6 lg:px-8">Loading account...</div>;
   }
 
   if (!user) {
@@ -44,13 +45,15 @@ function ProtectedRoute({ children, allow = 'all', redirectTo = '/login' }) {
 function AppLayout() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Navbar />
-      <main className="min-h-screen bg-[#FFFDF9]">
+      <main id="main-content" className="min-h-screen bg-[#FFFDF9]" tabIndex="-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/items" element={<ItemsPage />} />
           <Route path="/items/:id" element={<ItemDetailPage />} />
           <Route path="/build-event" element={<BuildEventPage />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

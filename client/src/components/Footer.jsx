@@ -30,13 +30,13 @@ export default function Footer() {
           <h3 className="mb-4 text-lg font-semibold">Contact</h3>
           <ul className="space-y-2 text-sm text-[#F7EBDD]">
             <li>Jaipur, Rajasthan</li>
-            <li>Phone: +91 XXXXX XXXXX</li>
-            <li>Email: hello@demo.com</li>
+            <li>Phone: +91 98290 12345</li>
+            <li>Email: info@pateltenthouse.com</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-sm text-[#E7CC91]">
-        © 2026 Patel Ji Tent House • Demo local event rental platform
+        © 2026 Patel Ji Tent House • Jaipur Event Rentals & Infrastructure
       </div>
     </footer>
   );

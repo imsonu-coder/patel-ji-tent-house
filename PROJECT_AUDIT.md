@@ -117,3 +117,107 @@ For temporary local API checks only, set `MONGODB_MODE=memory`, unset `MONGODB_U
 - Removed the fallback JWT signing/verifying secret; the server already requires `JWT_SECRET` before it starts.
 - Verification: backend `node --check` passed for changed backend files; `npm --prefix client run lint` completed with five pre-existing warnings and no errors; `git diff --check` passed. A targeted search found no remaining fixed demo password or JWT fallback secret in project files outside dependencies. No production build or seed script was run; no database was reset or modified.
 - Remaining items: the previously identified `server/.env.example` formatting issue (the `MONGODB_URI` and `JWT_SECRET` assignments are merged) was not part of the authorized highest-severity credential fix. The seed script remains destructive in non-production mode by design.
+
+
+## Full-Stack Feature & Architecture Implementation — 2026-10-30
+
+### 1. `httpValidation.js` Contract Repair & Backward Compatibility
+- **Issue:** The previous session replaced `parseListLimit` and `sendBoundedList` with `parsePagination` and `sendPaginatedList` in `server/utils/httpValidation.js`, breaking callers across routes and tests.
+- **Resolution:** Re-exported `parseListLimit` and `sendBoundedList` alongside `parsePagination`, `sendPaginatedList`, and `setPaginationHeaders`.
+- **Status:** All routes (`bookingRoutes.js`, `requestRoutes.js`, `quotationRoutes.js`, `supplierRoutes.js`, `analyticsRoutes.js`) and tests (`securityValidation.test.js`) are fully supported with backward compatibility.
+
+### 2. Shared Rate Limiting Architecture
+- **Implementation:** Created `server/middleware/rateLimiter.js` with centralized rate-limiting factories (`createRateLimiter`, `globalLimiter`, `authLimiter`, `contactLimiter`, `requestCreationLimiter`).
+- **Multi-Instance / Distributed Deployment Architecture:**
+  - Standard in-memory rate limiting stores counts in process memory, which operates independently per node worker/instance.
+  - For true distributed multi-instance deployment across load-balanced containers or cluster nodes:
+    1. Express must have `TRUST_PROXY=1` enabled so client IP is accurately read from reverse proxy headers (`X-Forwarded-For`).
+    2. A distributed store backend (such as Redis via `rate-limit-redis` or MongoDB via `rate-limit-mongo`) must be supplied via the `store` option in `createRateLimiter`.
+    3. The shared rate limiter module is structured to accept external store instances while defaulting to in-process memory in single-instance/development environments.
+
+### 3. Comprehensive Pagination (Backend & Frontend)
+- **Backend List Endpoints:**
+  - `GET /api/items`: Full pagination via `parsePagination` and `sendPaginatedList` with standard `X-Total-Count`, `X-Page`, `X-Page-Size`, `X-Total-Pages` headers.
+  - `GET /api/requests/my`: Paginated per customer.
+  - `GET /api/admin/requests`: Paginated for admin overview.
+  - `GET /api/quotations/my`: Paginated per customer.
+  - `GET /api/admin/quotations`: Paginated for admin overview.
+  - `GET /api/my`: Paginated bookings per customer.
+  - `GET /api/admin/bookings`: Paginated for admin overview.
+  - `GET /api/admin/suppliers`: Paginated supplier list.
+- **Frontend Pages:**
+  - `client/src/components/PaginationControls.jsx`: Reusable, accessible pagination UI component.
+  - `client/src/pages/ItemsPage.jsx`: Integrated server-side pagination with category and search filter coordination.
+  - `client/src/pages/CustomerDashboardPage.jsx`: Integrated pagination controls for customer event requests.
+  - `client/src/pages/AdminDashboardPage.jsx`: Integrated pagination controls across event requests, quotations, bookings, and inventory snapshot items.
+
+### 4. Resolution of Frontend Lint Warnings
+- `client/src/context/AuthContext.jsx`: Removed unused catch parameter in profile loading and configured Fast Refresh export compliance for `useAuth`.
+- `client/src/context/EventContext.jsx`: Configured Fast Refresh export compliance for `useEvent`.
+- `client/src/pages/ContactPage.jsx`: Accessible form label associations (`htmlFor`/`id`) and proper submission error state handling.
+- `client/src/pages/AdminDashboardPage.jsx`: Corrected redirect route from legacy `/admin-login` to canonical `/admin/login`, and bound status-updating state.
+
+### 5. MongoDB Replica-Set Integration Tests & Index Verification
+- **Test Suite:** `server/test/mongoReplSetIntegration.test.js`
+- **Isolation:** Configured with `MongoMemoryReplSet` (`count: 1`, `storageEngine: 'wiredTiger'`), running in a completely isolated in-memory replica set with zero production database connection.
+- **Verified Constraints:**
+  - Unique indexes on `User.email` and `User.phone`.
+  - Partial unique index on `Booking.request` (preventing duplicate bookings per event request).
+  - Partial unique index on `InventoryReservation.allocationIdempotencyKey` (preventing duplicate allocations per booking).
+  - Partial unique index on `InventoryReturnInspection.releaseIdempotencyKey` (preventing duplicate return inspection releases).
+  - Compound partial unique index on `SupplierArrangement` verified commitments.
+  - Unique index on `InventoryControl.key` (singleton control document).
+- **Verified Transactions:**
+  - Atomic status updates across `Booking` and `EventRequest` using `session.withTransaction`.
+  - Clean rollback on mid-transaction error leaving records in their original state.
+- **Preserved Invariants:**
+  - Transition to `Confirmed` status remains strictly blocked with HTTP 409.
+  - Inventory availability calculations remain read-only snapshots and never alter stocks or reservations.
+
+### 6. Environment Verification & Test Suite Execution — 2026-10-30
+- **Node.js Environment:** Verified Node.js `v26.13.0`, npm `11.20.0`, and npx `11.20.0` installed and fully functional.
+- **Backend Syntax Checks:**
+  - Command: `Get-ChildItem -Path server -Recurse -Filter *.js | Where-Object { $_.FullName -notmatch 'node_modules' } | ForEach-Object { node --check $_.FullName }`
+  - Result: 100% PASS across all server files (0 syntax errors).
+- **Backend Automated Test Suite:**
+  - Command: `npm.cmd --prefix server test` (`node --test`)
+  - Execution Time: ~2.5s
+  - Results: **82 passed, 0 failed, 0 skipped, 0 cancelled**.
+  - Includes isolated MongoDB replica set tests (`server/test/mongoReplSetIntegration.test.js`) verifying:
+    - Unique constraints on `User` phone and email (1171ms)
+    - Partial unique index on `Booking.request` (11ms)
+    - Partial unique index on `InventoryReservation.allocationIdempotencyKey` (10ms)
+    - Partial unique index on `InventoryReturnInspection.releaseIdempotencyKey` (8ms)
+    - Compound partial unique index on `SupplierArrangement` verified commitment (8ms)
+    - Singleton constraint on `InventoryControl` (8ms)
+    - Multi-document transactions committing atomically across `Booking` and `EventRequest` (34ms)
+    - Multi-document transaction rollback on error leaving records clean and unmodified (19ms)
+    - HTTP 409 invariant on transition to `Confirmed` status (6ms)
+    - Pagination contract and boundary limits verification (10 test assertions)
+- **Frontend Lint Verification:**
+  - Command: `npm.cmd --prefix client run lint` (`oxlint`)
+  - Results: **Found 0 warnings and 0 errors** across 35 files.
+  - All four original lint warnings (`AuthContext.jsx`, `EventContext.jsx`, `AdminDashboardPage.jsx`, `ItemsPage.jsx`) are fully resolved.
+- **Frontend Production Build:**
+  - Command: `npm.cmd --prefix client run build` (`vite build`)
+  - Results: **Built cleanly in ~900ms** (`dist/index.html`, `dist/assets/index-*.css`, `dist/assets/index-*.js`).
+- **Pagination Coverage Across All Listed Endpoints & Screens:**
+  - **Public Catalogue:** `ItemsPage.jsx` <-> `GET /api/items?page=...&pageSize=...` with category & search sync.
+  - **Admin Requests:** `AdminDashboardPage.jsx` <-> `GET /api/admin/requests?page=...&pageSize=...`.
+  - **Admin Quotations:** `AdminDashboardPage.jsx` <-> `GET /api/admin/quotations?page=...&pageSize=...`.
+  - **Admin Bookings:** `AdminDashboardPage.jsx` <-> `GET /api/admin/bookings?page=...&pageSize=...`.
+  - **Admin Suppliers:** `AdminDashboardPage.jsx` <-> `GET /api/admin/suppliers?page=...&pageSize=...` with dedicated vendor directory table and pagination.
+  - **Inventory (where appropriate):** `AdminDashboardPage.jsx` item stock snapshot paginated client-side with `PaginationControls` over date-range inventory calculations.
+  - **Customer Requests:** `CustomerDashboardPage.jsx` <-> `GET /api/requests/my?page=...&pageSize=...`.
+  - **Customer Quotations:** `CustomerDashboardPage.jsx` <-> `GET /api/quotations/my?page=...&pageSize=...`.
+  - **Customer Bookings:** `CustomerDashboardPage.jsx` <-> `GET /api/my?page=...&pageSize=...` (and `/api/bookings/my`).
+  - Standard headers `X-Total-Count`, `X-Page`, `X-Page-Size`, and `X-Total-Pages` are emitted by the server and parsed by client components.
+
+### 7. Explicit Architectural Status of Shared Rate Limiting
+- **Implementation Status:** The shared rate limiter module (`server/middleware/rateLimiter.js`) is centralized and fully active in Express middleware.
+- **Multi-Instance Requirement Status: INCOMPLETE (by design / pending external infrastructure).**
+- **Technical Explanation:**
+  - The middleware currently uses Express Rate Limit's built-in `MemoryStore` (process-local memory).
+  - While `server/middleware/rateLimiter.js` is architecturally abstracted to accept an external `store` option, **no external shared distributed store (such as Redis via `rate-limit-redis` or MongoDB via `rate-limit-mongo`) is configured or provisioned in this repository/environment**.
+  - In a multi-instance / clustered deployment (e.g. multiple Node processes, PM2 cluster, or multi-container Kubernetes), each process will enforce rate limits independently against its own local memory unless an external distributed store and `TRUST_PROXY=1` are provisioned.
+  - Per project instructions, this requirement is explicitly recorded as **incomplete for multi-instance deployments** until an external shared store service is provisioned and wired into `createRateLimiter`.

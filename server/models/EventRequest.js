@@ -57,14 +57,24 @@ const eventRequestSchema = new mongoose.Schema(
     items: [eventRequestItemSchema],
     status: {
       type: String,
-      enum: ['Submitted', 'Under Review', 'Quotation Sent', 'Confirmed', 'Completed', 'Rejected', 'Cancelled'],
+      enum: ['Submitted', 'Under Review', 'Quotation Draft', 'Quotation Sent', 'Quotation Accepted', 'Quotation Expired', 'Confirmed', 'Completed', 'Rejected', 'Cancelled'],
       default: 'Submitted'
     },
     estimatedAmount: {
       type: Number,
       default: 0
     },
-    notes: [{ type: String }]
+    notes: [{ type: String }],
+    isSynthetic: {
+      type: Boolean,
+      default: false,
+      index: true
+    },
+    syntheticId: {
+      type: String,
+      sparse: true,
+      index: true
+    }
   },
   { timestamps: true }
 );

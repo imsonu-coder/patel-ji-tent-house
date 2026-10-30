@@ -8,8 +8,8 @@ const connectDB = async () => {
   const configuredMode = process.env.MONGODB_MODE || 'mongodb';
   const mongoUri = process.env.MONGODB_URI;
 
-  if (!process.env.JWT_SECRET) {
-    throw new Error('JWT_SECRET is required. Set it in server/.env before starting the server.');
+  if (!process.env.JWT_SECRET || Buffer.byteLength(process.env.JWT_SECRET, 'utf8') < 32) {
+    throw new Error('JWT_SECRET must be configured with at least 32 bytes.');
   }
 
   if (configuredMode === 'memory') {
@@ -34,17 +34,19 @@ const connectDB = async () => {
     throw new Error('MONGODB_URI is required. Configure a persistent MongoDB connection or explicitly opt in to MONGODB_MODE=memory for local testing.');
   }
 
-  await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 10000 });
+  await mongoose.connect(mongoUri, {
+    serverSelectionTimeoutMS: 10000,
+    maxPoolSize: 50,
+    minPoolSize: 5
+  });
   databaseMode = 'mongodb';
-  console.log(`Connected to MongoDB database "${mongoose.connection.name}" at ${mongoose.connection.host}.`);
+  console.log('Connected to MongoDB.');
 };
 
 module.exports = connectDB;
 module.exports.getDatabaseStatus = () => ({
   mode: databaseMode,
-  connected: mongoose.connection.readyState === 1,
-  database: mongoose.connection.name || null,
-  host: mongoose.connection.host || null
+  connected: mongoose.connection.readyState === 1
 });
 module.exports.closeMemoryServer = async () => {
   if (memoryServer) {

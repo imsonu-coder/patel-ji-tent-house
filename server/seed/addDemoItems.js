@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const connectDB = require('../config/db');
 const Category = require('../models/Category');
 const Item = require('../models/Item');
+const {
+  SeedSafetyError,
+  assertSafeSeedTarget,
+  assertConnectedSeedTarget
+} = require('./seedSafety');
 
 const categories = [
   {
@@ -67,7 +72,9 @@ const demoItems = [
 
 async function addDemoItems() {
   try {
+    assertSafeSeedTarget();
     await connectDB();
+    assertConnectedSeedTarget(mongoose);
 
     const categoryIds = {};
 
@@ -104,10 +111,19 @@ async function addDemoItems() {
 
     console.log(`Demo inventory complete. Added: ${added}; skipped existing: ${skipped}.`);
   } catch (error) {
-    console.error('Could not add demo inventory:', error.message);
+    if (error instanceof SeedSafetyError) {
+      console.error(error.message);
+    } else {
+      console.error('Could not add demo inventory; database error details were suppressed.');
+    }
     process.exitCode = 1;
   } finally {
-    await mongoose.disconnect();
+    try {
+      await mongoose.disconnect();
+    } catch {
+      console.error('Could not close the MongoDB connection cleanly.');
+      process.exitCode = 1;
+    }
   }
 }
 

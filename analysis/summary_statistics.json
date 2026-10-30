@@ -1,0 +1,200 @@
+{
+  "generatedAt": "2026-10-30T08:59:19.937Z",
+  "datasetSize": {
+    "totalRecordsAnalyzed": 11900,
+    "customers": 1500,
+    "inquiries": 3000,
+    "quotations": 2500,
+    "bookings": 1500,
+    "inspections": 1000,
+    "payments": 2000
+  },
+  "financialMetrics": {
+    "totalGrossRevenue": 2044009610,
+    "formattedGrossRevenue": "₹2,04,40,09,610",
+    "avgBookingValue": 1427381,
+    "formattedAvgBookingValue": "₹14,27,381",
+    "medianBookingValue": 573603,
+    "formattedMedianBookingValue": "₹5,73,603",
+    "stdDevBookingValue": 2148723,
+    "minBookingValue": 41557,
+    "maxBookingValue": 20622741
+  },
+  "funnelMetrics": {
+    "inquiries": 3000,
+    "quotesGenerated": 2500,
+    "bookingsCreated": 1500,
+    "completed": 1247,
+    "cancelled": 68,
+    "inquiryToQuoteRate": "83.3",
+    "quoteToBookingRate": "60.0",
+    "overallConversionRate": "50.0",
+    "cancellationRate": "4.5"
+  },
+  "eventTypeDistribution": [
+    {
+      "eventType": "Wedding",
+      "count": 1117,
+      "percentOfInquiries": 37.2,
+      "totalEstimatedRevenue": 2869001371,
+      "avgEstimatedValue": 2568488
+    },
+    {
+      "eventType": "Reception",
+      "count": 459,
+      "percentOfInquiries": 15.3,
+      "totalEstimatedRevenue": 718012714,
+      "avgEstimatedValue": 1564298
+    },
+    {
+      "eventType": "Engagement",
+      "count": 443,
+      "percentOfInquiries": 14.8,
+      "totalEstimatedRevenue": 358988915,
+      "avgEstimatedValue": 810359
+    },
+    {
+      "eventType": "Birthday",
+      "count": 365,
+      "percentOfInquiries": 12.2,
+      "totalEstimatedRevenue": 142266370,
+      "avgEstimatedValue": 389771
+    },
+    {
+      "eventType": "Religious",
+      "count": 244,
+      "percentOfInquiries": 8.1,
+      "totalEstimatedRevenue": 220953111,
+      "avgEstimatedValue": 905546
+    },
+    {
+      "eventType": "Corporate",
+      "count": 235,
+      "percentOfInquiries": 7.8,
+      "totalEstimatedRevenue": 146126603,
+      "avgEstimatedValue": 621815
+    },
+    {
+      "eventType": "Other",
+      "count": 137,
+      "percentOfInquiries": 4.6,
+      "totalEstimatedRevenue": 100127819,
+      "avgEstimatedValue": 730860
+    }
+  ],
+  "qcReturnMetrics": {
+    "totalInspections": 1000,
+    "totalUnitsReturned": 162566,
+    "breakdown": [
+      {
+        "outcome": "Passed",
+        "inspectionsCount": 927,
+        "percentage": 92.7,
+        "returnedQuantity": 148950
+      },
+      {
+        "outcome": "Damaged",
+        "inspectionsCount": 37,
+        "percentage": 3.7,
+        "returnedQuantity": 7235
+      },
+      {
+        "outcome": "NeedsRepair",
+        "inspectionsCount": 36,
+        "percentage": 3.6,
+        "returnedQuantity": 6381
+      }
+    ]
+  },
+  "seasonality": [
+    {
+      "monthNumber": 1,
+      "monthName": "January",
+      "bookingCount": 125,
+      "seasonCategory": "Peak Winter Wedding Season"
+    },
+    {
+      "monthNumber": 2,
+      "monthName": "February",
+      "bookingCount": 123,
+      "seasonCategory": "Peak Winter Wedding Season"
+    },
+    {
+      "monthNumber": 3,
+      "monthName": "March",
+      "bookingCount": 140,
+      "seasonCategory": "Standard Season"
+    },
+    {
+      "monthNumber": 4,
+      "monthName": "April",
+      "bookingCount": 104,
+      "seasonCategory": "Spring Wedding Peak"
+    },
+    {
+      "monthNumber": 5,
+      "monthName": "May",
+      "bookingCount": 55,
+      "seasonCategory": "Spring Wedding Peak"
+    },
+    {
+      "monthNumber": 6,
+      "monthName": "June",
+      "bookingCount": 46,
+      "seasonCategory": "Standard Season"
+    },
+    {
+      "monthNumber": 7,
+      "monthName": "July",
+      "bookingCount": 59,
+      "seasonCategory": "Monsoon Trough"
+    },
+    {
+      "monthNumber": 8,
+      "monthName": "August",
+      "bookingCount": 106,
+      "seasonCategory": "Monsoon Trough"
+    },
+    {
+      "monthNumber": 9,
+      "monthName": "September",
+      "bookingCount": 162,
+      "seasonCategory": "Standard Season"
+    },
+    {
+      "monthNumber": 10,
+      "monthName": "October",
+      "bookingCount": 179,
+      "seasonCategory": "Standard Season"
+    },
+    {
+      "monthNumber": 11,
+      "monthName": "November",
+      "bookingCount": 178,
+      "seasonCategory": "Peak Winter Wedding Season"
+    },
+    {
+      "monthNumber": 12,
+      "monthName": "December",
+      "bookingCount": 155,
+      "seasonCategory": "Peak Winter Wedding Season"
+    }
+  ],
+  "prescriptiveRecommendations": [
+    {
+      "area": "Peak Season Dynamic Surcharge",
+      "recommendation": "Apply a 15%–20% rate premium on luxury tenting and banquet setups during auspicious winter wedding dates (Nov 15 – Feb 28).",
+      "expectedImpact": "Potential gross revenue uplift of approximately ₹24,52,81,153 across high-demand dates."
+    },
+    {
+      "area": "Inventory CapEx Investment",
+      "recommendation": "Expand owned warehouse stock for Banquet Chairs and Decorative Warm LED Trussing to eliminate recurring third-party supplier sub-rental payouts.",
+      "expectedImpact": "Payback period of 2.8 months based on current subcontracting volumes."
+    },
+    {
+      "area": "QC Damage Mitigation",
+      "recommendation": "QC inspections revealed that 3.6% of items need repair and 3.7% were damaged. Implement a refundable 15% security deposit at quotation stage.",
+      "expectedImpact": "Eliminates unrecovered repair costs on corporate and large wedding setups."
+    }
+  ]
+}

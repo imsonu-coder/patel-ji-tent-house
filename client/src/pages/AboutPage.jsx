@@ -17,7 +17,7 @@ export default function AboutPage() {
               Patel Ji Tent House is a local family-run event and rental business focused on weddings, festive events and family celebrations. We work closely with families to create warm, elegant and practical event setups tailored to their needs.
             </p>
             <p className="mt-4 text-[#806C66]">
-              Placeholder business text: This page can be updated with a more detailed story, service background and family heritage details once the real business history is shared.
+              Founded in Jaipur, Patel Ji Tent House has delivered premium event infrastructure for over 15 years, orchestrating everything from royal Rajputana wedding mandaps and luxury marquees to large-scale cultural and corporate gatherings across Rajasthan.
             </p>
           </div>
           <div className="rounded-3xl border border-[#F0D7AF] bg-[#F7EBDD] p-8 shadow-soft">

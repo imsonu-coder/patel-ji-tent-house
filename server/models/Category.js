@@ -23,6 +23,16 @@ const categorySchema = new mongoose.Schema(
       type: String,
       enum: ['active', 'inactive'],
       default: 'active'
+    },
+    isSynthetic: {
+      type: Boolean,
+      default: false,
+      index: true
+    },
+    syntheticId: {
+      type: String,
+      sparse: true,
+      index: true
     }
   },
   { timestamps: true }

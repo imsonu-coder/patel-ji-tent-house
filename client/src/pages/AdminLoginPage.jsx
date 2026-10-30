@@ -36,12 +36,12 @@ export default function AdminLoginPage() {
         <h1 className="mt-2 font-[Playfair_Display] text-4xl text-[#33201D]">Admin login</h1>
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
           <div>
-            <label className="mb-2 block text-sm font-medium text-[#33201D]">Email</label>
-            <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-xl border border-[#E7CC91] bg-white p-3 outline-none" required />
+            <label htmlFor="admin-login-email" className="mb-2 block text-sm font-medium text-[#33201D]">Email</label>
+            <input id="admin-login-email" type="email" autoComplete="username" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-xl border border-[#E7CC91] bg-white p-3 outline-none" required />
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-[#33201D]">Password</label>
-            <input type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} className="w-full rounded-xl border border-[#E7CC91] bg-white p-3 outline-none" required />
+            <label htmlFor="admin-login-password" className="mb-2 block text-sm font-medium text-[#33201D]">Password</label>
+            <input id="admin-login-password" type="password" autoComplete="current-password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} className="w-full rounded-xl border border-[#E7CC91] bg-white p-3 outline-none" required />
           </div>
           {error && <div role="alert" className="text-sm text-[#6B1E2B]">{error}</div>}
           <button type="submit" disabled={submitting} className="w-full rounded-full bg-[#6B1E2B] px-5 py-3 font-semibold text-white disabled:opacity-60">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Minus, Plus, Trash2 } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { LayoutDashboard, Minus, Plus, ShieldCheck, Trash2 } from 'lucide-react';
 import api from '../api/client';
 import { industryNotice } from '../data/siteData';
 import { useAuth } from '../context/AuthContext';
@@ -57,6 +57,33 @@ export default function BuildEventPage() {
       alert(error.response?.data?.message || 'Your requirement could not be submitted.');
     }
   };
+
+  if (user?.role === 'admin') {
+    return (
+      <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
+        <div className="rounded-3xl border border-[#D7B46B] bg-[#FFF8ED] p-8 shadow-soft">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#6B1E2B]/10 text-[#6B1E2B]">
+            <ShieldCheck size={28} aria-hidden="true" />
+          </div>
+          <h1 className="mt-4 font-[Playfair_Display] text-3xl font-bold text-[#45121C]">
+            Admin Operations Center
+          </h1>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[#755D53]">
+            The <strong>Event Builder</strong> is a customer inquiry wizard. As an administrator, you manage event inquiries, create quotations, and verify bookings inside the Admin Dashboard.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/admin"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#6B1E2B] px-6 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:bg-[#45121C]"
+            >
+              <LayoutDashboard size={16} aria-hidden="true" />
+              Open Admin Dashboard
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const renderStep = () => {
     if (currentStep === 1) {

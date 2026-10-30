@@ -1,10 +1,10 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const bcrypt = require('bcryptjs');
-const path = require('path');
+const { globalLimiter } = require('./middleware/rateLimiter');
+const bcrypt = require('bcryptjs');
 
 const connectDB = require('./config/db');
 const { getDatabaseStatus } = connectDB;
@@ -20,56 +20,71 @@ const bookingRoutes = require('./routes/bookingRoutes');
 const supplierRoutes = require('./routes/supplierRoutes');
 const galleryRoutes = require('./routes/galleryRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
+const adminInventoryRoutes = require('./routes/adminInventoryRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+const { redactDiagnosticText } = require('./utils/httpValidation');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-const allowedOrigins = [
-  process.env.CLIENT_URL,
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+if (process.env.TRUST_PROXY === '1') app.set('trust proxy', 1);
+
+const developmentOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'http://127.0.0.1:5173',
   'http://127.0.0.1:5174'
+];
+const configuredOrigins = process.env.CLIENT_URL
+  ? process.env.CLIENT_URL.split(',').map((origin) => origin.trim()).filter(Boolean)
+  : [];
+const allowedOrigins = [
+  ...configuredOrigins,
+  ...(process.env.NODE_ENV === 'production' ? [] : developmentOrigins)
 ].filter(Boolean);
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-        return;
-      }
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
 
-      callback(new Error('Not allowed by CORS'));
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
-  })
-);
-app.use(helmet());
+    callback(null, false);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin']
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(
-  rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 200,
-    standardHeaders: true,
-    legacyHeaders: false,
-    message: 'Too many requests, please try again later.'
+  helmet({
+    crossOriginResourcePolicy: { policy: 'cross-origin' }
   })
 );
+app.use(globalLimiter);
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/auth', authRoutes);
-app.use('/api/items', itemRoutes);
-app.use('/api/categories', categoryRoutes);
-app.use('/api', requestRoutes);
-app.use('/api', quotationRoutes);
-app.use('/api', bookingRoutes);
-app.use('/api/admin/suppliers', supplierRoutes);
-app.use('/api/gallery', galleryRoutes);
-app.use('/api/admin/analytics', analyticsRoutes);
-app.use('/api/contact', contactRoutes);
+app.get(['/', '/api', '/api/'], (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'Patel Ji Tent House API is active and running.',
+    database: getDatabaseStatus(),
+    endpoints: {
+      health: '/api/health',
+      items: '/api/items',
+      categories: '/api/categories',
+      gallery: '/api/gallery'
+    }
+  });
+});
 
 app.get('/api/health', (req, res) => {
   const database = getDatabaseStatus();
@@ -81,11 +96,41 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+app.use('/api/auth', authRoutes);
+app.use('/api/items', itemRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api', requestRoutes);
+app.use('/api', quotationRoutes);
+app.use('/api', bookingRoutes);
+app.use('/api/admin/suppliers', supplierRoutes);
+app.use('/api/gallery', galleryRoutes);
+app.use('/api/admin/analytics', analyticsRoutes);
+app.use('/api/admin/inventory', adminInventoryRoutes);
+app.use('/api/contact', contactRoutes);
+
+
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: 'Something went wrong on the server.' });
+  if (res.headersSent) return next(err);
+  const isClientParserError = ['entity.parse.failed', 'entity.too.large'].includes(err.type);
+  const statusCode = isClientParserError ? (err.type === 'entity.too.large' ? 413 : 400) : 500;
+  if (statusCode === 500) {
+    const identity = `[${req.method} ${req.path}] ${err.name || 'Error'}${err.code ? ` (${err.code})` : ''}`;
+    if (process.env.NODE_ENV === 'production') {
+      console.error(identity);
+    } else {
+      console.error(identity, redactDiagnosticText(err.stack || err.message || ''));
+    }
+  }
+  return res.status(statusCode).json({
+    message: statusCode === 413
+      ? 'Request body is too large.'
+      : statusCode === 400
+        ? 'Request body is malformed.'
+        : 'Something went wrong on the server.'
+  });
 });
 
 const startServer = async () => {
@@ -178,12 +223,15 @@ const startServer = async () => {
     }
   }
 
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
 };
 
 startServer().catch((error) => {
-  console.error(`Server startup failed: ${error.message}`);
+  console.error(`Server startup failed: ${error.name || 'Error'}${error.code ? ` (${error.code})` : ''}`);
+  if (process.env.NODE_ENV !== 'production') {
+    console.error(redactDiagnosticText(error.stack || error.message || ''));
+  }
   process.exitCode = 1;
 });

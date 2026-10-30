@@ -19,23 +19,34 @@ const quotationSchema = new mongoose.Schema(
     },
     items: [
       {
-        itemName: String,
-        quantity: Number,
-        unitPrice: Number,
-        subtotal: Number
+        item: { type: mongoose.Schema.Types.ObjectId, ref: 'Item' },
+        itemName: { type: String, required: true },
+        quantity: { type: Number, required: true, min: 1, validate: Number.isInteger },
+        unitPrice: { type: Number, required: true, min: 0 },
+        subtotal: { type: Number, required: true, min: 0 }
       }
     ],
-    decorationServices: { type: Number, default: 0 },
-    transportation: { type: Number, default: 0 },
-    discount: { type: Number, default: 0 },
-    additionalCharges: { type: Number, default: 0 },
-    finalTotal: { type: Number, required: true },
+    decorationServices: { type: Number, default: 0, min: 0 },
+    transportation: { type: Number, default: 0, min: 0 },
+    discount: { type: Number, default: 0, min: 0 },
+    additionalCharges: { type: Number, default: 0, min: 0 },
+    finalTotal: { type: Number, required: true, min: 0 },
     notes: { type: String, default: '' },
     validityDate: { type: Date },
     status: {
       type: String,
       enum: ['Draft', 'Sent', 'Accepted', 'Rejected', 'Expired'],
       default: 'Draft'
+    },
+    isSynthetic: {
+      type: Boolean,
+      default: false,
+      index: true
+    },
+    syntheticId: {
+      type: String,
+      sparse: true,
+      index: true
     }
   },
   { timestamps: true }

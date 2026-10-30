@@ -1,0 +1,301 @@
+syntheticId,_id,itemCode,name,categorySlug,categoryName,basePrice,priceUnit,ownStock,status
+ITEM-SYN-0001,6ae45e9c21e1560eaed24208,ITEM-SYN-0001,Royal Waterproof Shamiana Tent - Standard Grade,tents,Tents & Canopies,16241,Per Day,8,active
+ITEM-SYN-0002,6ae45e9c21e1560eaed24209,ITEM-SYN-0002,Royal Waterproof Shamiana Tent - Premium Heritage,tents,Tents & Canopies,30641,Per Day,15,active
+ITEM-SYN-0003,6ae45e9c21e1560eaed2420a,ITEM-SYN-0003,Royal Waterproof Shamiana Tent - Royal Gold Finish,tents,Tents & Canopies,21908,Per Day,11,active
+ITEM-SYN-0004,6ae45e9c21e1560eaed2420b,ITEM-SYN-0004,Royal Waterproof Shamiana Tent - Imperial Series,tents,Tents & Canopies,24111,Per Day,13,active
+ITEM-SYN-0005,6ae45e9c21e1560eaed2420c,ITEM-SYN-0005,Royal Waterproof Shamiana Tent - Commercial Heavy Duty,tents,Tents & Canopies,24512,Per Day,13,active
+ITEM-SYN-0006,6ae45e9c21e1560eaed2420d,ITEM-SYN-0006,Royal Waterproof Shamiana Tent - Classic White,tents,Tents & Canopies,27193,Per Day,8,active
+ITEM-SYN-0007,6ae45e9c21e1560eaed2420e,ITEM-SYN-0007,Royal Waterproof Shamiana Tent - Regal Velvet Edition,tents,Tents & Canopies,22468,Per Day,11,active
+ITEM-SYN-0008,6ae45e9c21e1560eaed2420f,ITEM-SYN-0008,Royal Waterproof Shamiana Tent - Contemporary Matte,tents,Tents & Canopies,16658,Per Day,17,active
+ITEM-SYN-0009,6ae45e9c21e1560eaed24210,ITEM-SYN-0009,Royal Waterproof Shamiana Tent - Export Quality,tents,Tents & Canopies,25000,Per Day,19,active
+ITEM-SYN-0010,6ae45e9c21e1560eaed24211,ITEM-SYN-0010,Royal Waterproof Shamiana Tent - Festival Special,tents,Tents & Canopies,26513,Per Day,6,active
+ITEM-SYN-0011,6ae45e9c21e1560eaed24212,ITEM-SYN-0011,German Aluminum Hangar Marquee - Standard Grade,tents,Tents & Canopies,65913,Per Setup,3,active
+ITEM-SYN-0012,6ae45e9c21e1560eaed24213,ITEM-SYN-0012,German Aluminum Hangar Marquee - Premium Heritage,tents,Tents & Canopies,92463,Per Setup,4,active
+ITEM-SYN-0013,6ae45e9c21e1560eaed24214,ITEM-SYN-0013,German Aluminum Hangar Marquee - Royal Gold Finish,tents,Tents & Canopies,88242,Per Setup,6,active
+ITEM-SYN-0014,6ae45e9c21e1560eaed24215,ITEM-SYN-0014,German Aluminum Hangar Marquee - Imperial Series,tents,Tents & Canopies,121298,Per Setup,3,active
+ITEM-SYN-0015,6ae45e9c21e1560eaed24216,ITEM-SYN-0015,German Aluminum Hangar Marquee - Commercial Heavy Duty,tents,Tents & Canopies,57856,Per Setup,6,active
+ITEM-SYN-0016,6ae45e9c21e1560eaed24217,ITEM-SYN-0016,German Aluminum Hangar Marquee - Classic White,tents,Tents & Canopies,64151,Per Setup,6,active
+ITEM-SYN-0017,6ae45e9c21e1560eaed24218,ITEM-SYN-0017,German Aluminum Hangar Marquee - Regal Velvet Edition,tents,Tents & Canopies,66100,Per Setup,7,active
+ITEM-SYN-0018,6ae45e9c21e1560eaed24219,ITEM-SYN-0018,German Aluminum Hangar Marquee - Contemporary Matte,tents,Tents & Canopies,48594,Per Setup,5,active
+ITEM-SYN-0019,6ae45e9c21e1560eaed2421a,ITEM-SYN-0019,German Aluminum Hangar Marquee - Export Quality,tents,Tents & Canopies,90780,Per Setup,4,active
+ITEM-SYN-0020,6ae45e9c21e1560eaed2421b,ITEM-SYN-0020,German Aluminum Hangar Marquee - Festival Special,tents,Tents & Canopies,73673,Per Setup,2,active
+ITEM-SYN-0021,6ae45e9c21e1560eaed2421c,ITEM-SYN-0021,Traditional Rajasthani Printed Mandap Canopy - Standard Grade,tents,Tents & Canopies,21135,Per Setup,7,active
+ITEM-SYN-0022,6ae45e9c21e1560eaed2421d,ITEM-SYN-0022,Traditional Rajasthani Printed Mandap Canopy - Premium Heritage,tents,Tents & Canopies,25158,Per Setup,10,active
+ITEM-SYN-0023,6ae45e9c21e1560eaed2421e,ITEM-SYN-0023,Traditional Rajasthani Printed Mandap Canopy - Royal Gold Finish,tents,Tents & Canopies,24442,Per Setup,10,active
+ITEM-SYN-0024,6ae45e9c21e1560eaed2421f,ITEM-SYN-0024,Traditional Rajasthani Printed Mandap Canopy - Imperial Series,tents,Tents & Canopies,27766,Per Setup,9,active
+ITEM-SYN-0025,6ae45e9c21e1560eaed24220,ITEM-SYN-0025,Traditional Rajasthani Printed Mandap Canopy - Commercial Heavy Duty,tents,Tents & Canopies,36905,Per Setup,15,active
+ITEM-SYN-0026,6ae45e9c21e1560eaed24221,ITEM-SYN-0026,Traditional Rajasthani Printed Mandap Canopy - Classic White,tents,Tents & Canopies,33082,Per Setup,4,active
+ITEM-SYN-0027,6ae45e9c21e1560eaed24222,ITEM-SYN-0027,Traditional Rajasthani Printed Mandap Canopy - Regal Velvet Edition,tents,Tents & Canopies,21512,Per Setup,7,active
+ITEM-SYN-0028,6ae45e9c21e1560eaed24223,ITEM-SYN-0028,Traditional Rajasthani Printed Mandap Canopy - Contemporary Matte,tents,Tents & Canopies,20781,Per Setup,5,active
+ITEM-SYN-0029,6ae45e9c21e1560eaed24224,ITEM-SYN-0029,Traditional Rajasthani Printed Mandap Canopy - Export Quality,tents,Tents & Canopies,23710,Per Setup,8,active
+ITEM-SYN-0030,6ae45e9c21e1560eaed24225,ITEM-SYN-0030,Traditional Rajasthani Printed Mandap Canopy - Festival Special,tents,Tents & Canopies,23036,Per Setup,6,active
+ITEM-SYN-0031,6ae45e9c21e1560eaed24226,ITEM-SYN-0031,Waterproof Pagoda Gazebo Tent (10x10 ft) - Standard Grade,tents,Tents & Canopies,4291,Per Day,37,active
+ITEM-SYN-0032,6ae45e9c21e1560eaed24227,ITEM-SYN-0032,Waterproof Pagoda Gazebo Tent (10x10 ft) - Premium Heritage,tents,Tents & Canopies,6193,Per Day,31,active
+ITEM-SYN-0033,6ae45e9c21e1560eaed24228,ITEM-SYN-0033,Waterproof Pagoda Gazebo Tent (10x10 ft) - Royal Gold Finish,tents,Tents & Canopies,6493,Per Day,32,active
+ITEM-SYN-0034,6ae45e9c21e1560eaed24229,ITEM-SYN-0034,Waterproof Pagoda Gazebo Tent (10x10 ft) - Imperial Series,tents,Tents & Canopies,3767,Per Day,20,active
+ITEM-SYN-0035,6ae45e9c21e1560eaed2422a,ITEM-SYN-0035,Waterproof Pagoda Gazebo Tent (10x10 ft) - Commercial Heavy Duty,tents,Tents & Canopies,4826,Per Day,40,active
+ITEM-SYN-0036,6ae45e9c21e1560eaed2422b,ITEM-SYN-0036,Waterproof Pagoda Gazebo Tent (10x10 ft) - Classic White,tents,Tents & Canopies,4621,Per Day,23,active
+ITEM-SYN-0037,6ae45e9c21e1560eaed2422c,ITEM-SYN-0037,Waterproof Pagoda Gazebo Tent (10x10 ft) - Regal Velvet Edition,tents,Tents & Canopies,6128,Per Day,33,active
+ITEM-SYN-0038,6ae45e9c21e1560eaed2422d,ITEM-SYN-0038,Waterproof Pagoda Gazebo Tent (10x10 ft) - Contemporary Matte,tents,Tents & Canopies,6495,Per Day,37,active
+ITEM-SYN-0039,6ae45e9c21e1560eaed2422e,ITEM-SYN-0039,Waterproof Pagoda Gazebo Tent (10x10 ft) - Export Quality,tents,Tents & Canopies,7772,Per Day,19,active
+ITEM-SYN-0040,6ae45e9c21e1560eaed2422f,ITEM-SYN-0040,Waterproof Pagoda Gazebo Tent (10x10 ft) - Festival Special,tents,Tents & Canopies,7840,Per Day,34,active
+ITEM-SYN-0041,6ae45e9c21e1560eaed24230,ITEM-SYN-0041,Waterproof Pagoda Gazebo Tent (15x15 ft) - Standard Grade,tents,Tents & Canopies,7539,Per Day,18,active
+ITEM-SYN-0042,6ae45e9c21e1560eaed24231,ITEM-SYN-0042,Waterproof Pagoda Gazebo Tent (15x15 ft) - Premium Heritage,tents,Tents & Canopies,10554,Per Day,27,active
+ITEM-SYN-0043,6ae45e9c21e1560eaed24232,ITEM-SYN-0043,Waterproof Pagoda Gazebo Tent (15x15 ft) - Royal Gold Finish,tents,Tents & Canopies,11790,Per Day,23,active
+ITEM-SYN-0044,6ae45e9c21e1560eaed24233,ITEM-SYN-0044,Waterproof Pagoda Gazebo Tent (15x15 ft) - Imperial Series,tents,Tents & Canopies,9287,Per Day,20,active
+ITEM-SYN-0045,6ae45e9c21e1560eaed24234,ITEM-SYN-0045,Waterproof Pagoda Gazebo Tent (15x15 ft) - Commercial Heavy Duty,tents,Tents & Canopies,7748,Per Day,10,active
+ITEM-SYN-0046,6ae45e9c21e1560eaed24235,ITEM-SYN-0046,Waterproof Pagoda Gazebo Tent (15x15 ft) - Classic White,tents,Tents & Canopies,7946,Per Day,23,active
+ITEM-SYN-0047,6ae45e9c21e1560eaed24236,ITEM-SYN-0047,Waterproof Pagoda Gazebo Tent (15x15 ft) - Regal Velvet Edition,tents,Tents & Canopies,11353,Per Day,17,active
+ITEM-SYN-0048,6ae45e9c21e1560eaed24237,ITEM-SYN-0048,Waterproof Pagoda Gazebo Tent (15x15 ft) - Contemporary Matte,tents,Tents & Canopies,9493,Per Day,14,active
+ITEM-SYN-0049,6ae45e9c21e1560eaed24238,ITEM-SYN-0049,Waterproof Pagoda Gazebo Tent (15x15 ft) - Export Quality,tents,Tents & Canopies,6685,Per Day,20,active
+ITEM-SYN-0050,6ae45e9c21e1560eaed24239,ITEM-SYN-0050,Waterproof Pagoda Gazebo Tent (15x15 ft) - Festival Special,tents,Tents & Canopies,10828,Per Day,28,active
+ITEM-SYN-0051,6ae45e9c21e1560eaed2423a,ITEM-SYN-0051,Sheer Silk Draped Canopy Tent - Standard Grade,tents,Tents & Canopies,8836,Per Day,6,active
+ITEM-SYN-0052,6ae45e9c21e1560eaed2423b,ITEM-SYN-0052,Sheer Silk Draped Canopy Tent - Premium Heritage,tents,Tents & Canopies,14800,Per Day,15,active
+ITEM-SYN-0053,6ae45e9c21e1560eaed2423c,ITEM-SYN-0053,Sheer Silk Draped Canopy Tent - Royal Gold Finish,tents,Tents & Canopies,15648,Per Day,16,active
+ITEM-SYN-0054,6ae45e9c21e1560eaed2423d,ITEM-SYN-0054,Sheer Silk Draped Canopy Tent - Imperial Series,tents,Tents & Canopies,13158,Per Day,16,active
+ITEM-SYN-0055,6ae45e9c21e1560eaed2423e,ITEM-SYN-0055,Sheer Silk Draped Canopy Tent - Commercial Heavy Duty,tents,Tents & Canopies,14498,Per Day,12,active
+ITEM-SYN-0056,6ae45e9c21e1560eaed2423f,ITEM-SYN-0056,Sheer Silk Draped Canopy Tent - Classic White,tents,Tents & Canopies,17466,Per Day,7,active
+ITEM-SYN-0057,6ae45e9c21e1560eaed24240,ITEM-SYN-0057,Sheer Silk Draped Canopy Tent - Regal Velvet Edition,tents,Tents & Canopies,18178,Per Day,7,active
+ITEM-SYN-0058,6ae45e9c21e1560eaed24241,ITEM-SYN-0058,Sheer Silk Draped Canopy Tent - Contemporary Matte,tents,Tents & Canopies,9720,Per Day,12,active
+ITEM-SYN-0059,6ae45e9c21e1560eaed24242,ITEM-SYN-0059,Sheer Silk Draped Canopy Tent - Export Quality,tents,Tents & Canopies,17640,Per Day,14,active
+ITEM-SYN-0060,6ae45e9c21e1560eaed24243,ITEM-SYN-0060,Sheer Silk Draped Canopy Tent - Festival Special,tents,Tents & Canopies,16165,Per Day,8,active
+ITEM-SYN-0061,6ae45e9c21e1560eaed24244,ITEM-SYN-0061,Heavy Duty Food Stall Canopy Tent - Standard Grade,tents,Tents & Canopies,4924,Per Day,39,active
+ITEM-SYN-0062,6ae45e9c21e1560eaed24245,ITEM-SYN-0062,Heavy Duty Food Stall Canopy Tent - Premium Heritage,tents,Tents & Canopies,5205,Per Day,30,active
+ITEM-SYN-0063,6ae45e9c21e1560eaed24246,ITEM-SYN-0063,Heavy Duty Food Stall Canopy Tent - Royal Gold Finish,tents,Tents & Canopies,3925,Per Day,37,active
+ITEM-SYN-0064,6ae45e9c21e1560eaed24247,ITEM-SYN-0064,Heavy Duty Food Stall Canopy Tent - Imperial Series,tents,Tents & Canopies,5587,Per Day,25,active
+ITEM-SYN-0065,6ae45e9c21e1560eaed24248,ITEM-SYN-0065,Heavy Duty Food Stall Canopy Tent - Commercial Heavy Duty,tents,Tents & Canopies,3256,Per Day,38,active
+ITEM-SYN-0066,6ae45e9c21e1560eaed24249,ITEM-SYN-0066,Heavy Duty Food Stall Canopy Tent - Classic White,tents,Tents & Canopies,4939,Per Day,56,active
+ITEM-SYN-0067,6ae45e9c21e1560eaed2424a,ITEM-SYN-0067,Heavy Duty Food Stall Canopy Tent - Regal Velvet Edition,tents,Tents & Canopies,3884,Per Day,54,active
+ITEM-SYN-0068,6ae45e9c21e1560eaed2424b,ITEM-SYN-0068,Heavy Duty Food Stall Canopy Tent - Contemporary Matte,tents,Tents & Canopies,3771,Per Day,35,active
+ITEM-SYN-0069,6ae45e9c21e1560eaed2424c,ITEM-SYN-0069,Heavy Duty Food Stall Canopy Tent - Export Quality,tents,Tents & Canopies,5652,Per Day,52,active
+ITEM-SYN-0070,6ae45e9c21e1560eaed2424d,ITEM-SYN-0070,Heavy Duty Food Stall Canopy Tent - Festival Special,tents,Tents & Canopies,3799,Per Day,23,active
+ITEM-SYN-0071,6ae45e9c21e1560eaed2424e,ITEM-SYN-0071,Arabian Style Luxury Bedouin Tent - Standard Grade,tents,Tents & Canopies,46886,Per Setup,4,active
+ITEM-SYN-0072,6ae45e9c21e1560eaed2424f,ITEM-SYN-0072,Arabian Style Luxury Bedouin Tent - Premium Heritage,tents,Tents & Canopies,38794,Per Setup,8,active
+ITEM-SYN-0073,6ae45e9c21e1560eaed24250,ITEM-SYN-0073,Arabian Style Luxury Bedouin Tent - Royal Gold Finish,tents,Tents & Canopies,52149,Per Setup,6,active
+ITEM-SYN-0074,6ae45e9c21e1560eaed24251,ITEM-SYN-0074,Arabian Style Luxury Bedouin Tent - Imperial Series,tents,Tents & Canopies,31299,Per Setup,7,active
+ITEM-SYN-0075,6ae45e9c21e1560eaed24252,ITEM-SYN-0075,Arabian Style Luxury Bedouin Tent - Commercial Heavy Duty,tents,Tents & Canopies,39621,Per Setup,3,active
+ITEM-SYN-0076,6ae45e9c21e1560eaed24253,ITEM-SYN-0076,Arabian Style Luxury Bedouin Tent - Classic White,tents,Tents & Canopies,57902,Per Setup,4,active
+ITEM-SYN-0077,6ae45e9c21e1560eaed24254,ITEM-SYN-0077,Arabian Style Luxury Bedouin Tent - Regal Velvet Edition,tents,Tents & Canopies,56510,Per Setup,5,active
+ITEM-SYN-0078,6ae45e9c21e1560eaed24255,ITEM-SYN-0078,Arabian Style Luxury Bedouin Tent - Contemporary Matte,tents,Tents & Canopies,59357,Per Setup,4,active
+ITEM-SYN-0079,6ae45e9c21e1560eaed24256,ITEM-SYN-0079,Arabian Style Luxury Bedouin Tent - Export Quality,tents,Tents & Canopies,36134,Per Setup,5,active
+ITEM-SYN-0080,6ae45e9c21e1560eaed24257,ITEM-SYN-0080,Arabian Style Luxury Bedouin Tent - Festival Special,tents,Tents & Canopies,51609,Per Setup,5,active
+ITEM-SYN-0081,6ae45e9c21e1560eaed24258,ITEM-SYN-0081,Dome Canopy with Center Pole - Standard Grade,tents,Tents & Canopies,29133,Per Day,9,active
+ITEM-SYN-0082,6ae45e9c21e1560eaed24259,ITEM-SYN-0082,Dome Canopy with Center Pole - Premium Heritage,tents,Tents & Canopies,29139,Per Day,16,active
+ITEM-SYN-0083,6ae45e9c21e1560eaed2425a,ITEM-SYN-0083,Dome Canopy with Center Pole - Royal Gold Finish,tents,Tents & Canopies,18996,Per Day,7,active
+ITEM-SYN-0084,6ae45e9c21e1560eaed2425b,ITEM-SYN-0084,Dome Canopy with Center Pole - Imperial Series,tents,Tents & Canopies,28020,Per Day,15,active
+ITEM-SYN-0085,6ae45e9c21e1560eaed2425c,ITEM-SYN-0085,Dome Canopy with Center Pole - Commercial Heavy Duty,tents,Tents & Canopies,26800,Per Day,13,active
+ITEM-SYN-0086,6ae45e9c21e1560eaed2425d,ITEM-SYN-0086,Dome Canopy with Center Pole - Classic White,tents,Tents & Canopies,23573,Per Day,14,active
+ITEM-SYN-0087,6ae45e9c21e1560eaed2425e,ITEM-SYN-0087,Dome Canopy with Center Pole - Regal Velvet Edition,tents,Tents & Canopies,16156,Per Day,16,active
+ITEM-SYN-0088,6ae45e9c21e1560eaed2425f,ITEM-SYN-0088,Dome Canopy with Center Pole - Contemporary Matte,tents,Tents & Canopies,30637,Per Day,7,active
+ITEM-SYN-0089,6ae45e9c21e1560eaed24260,ITEM-SYN-0089,Dome Canopy with Center Pole - Export Quality,tents,Tents & Canopies,20234,Per Day,5,active
+ITEM-SYN-0090,6ae45e9c21e1560eaed24261,ITEM-SYN-0090,Dome Canopy with Center Pole - Festival Special,tents,Tents & Canopies,23198,Per Day,6,active
+ITEM-SYN-0091,6ae45e9c21e1560eaed24262,ITEM-SYN-0091,Side Wall Tarpaulin Curtain with Windows - Standard Grade,tents,Tents & Canopies,1700,Per Piece,76,active
+ITEM-SYN-0092,6ae45e9c21e1560eaed24263,ITEM-SYN-0092,Side Wall Tarpaulin Curtain with Windows - Premium Heritage,tents,Tents & Canopies,2183,Per Piece,69,active
+ITEM-SYN-0093,6ae45e9c21e1560eaed24264,ITEM-SYN-0093,Side Wall Tarpaulin Curtain with Windows - Royal Gold Finish,tents,Tents & Canopies,1573,Per Piece,42,active
+ITEM-SYN-0094,6ae45e9c21e1560eaed24265,ITEM-SYN-0094,Side Wall Tarpaulin Curtain with Windows - Imperial Series,tents,Tents & Canopies,2031,Per Piece,56,active
+ITEM-SYN-0095,6ae45e9c21e1560eaed24266,ITEM-SYN-0095,Side Wall Tarpaulin Curtain with Windows - Commercial Heavy Duty,tents,Tents & Canopies,1427,Per Piece,69,active
+ITEM-SYN-0096,6ae45e9c21e1560eaed24267,ITEM-SYN-0096,Side Wall Tarpaulin Curtain with Windows - Classic White,tents,Tents & Canopies,1746,Per Piece,45,active
+ITEM-SYN-0097,6ae45e9c21e1560eaed24268,ITEM-SYN-0097,Side Wall Tarpaulin Curtain with Windows - Regal Velvet Edition,tents,Tents & Canopies,1189,Per Piece,56,active
+ITEM-SYN-0098,6ae45e9c21e1560eaed24269,ITEM-SYN-0098,Side Wall Tarpaulin Curtain with Windows - Contemporary Matte,tents,Tents & Canopies,1256,Per Piece,93,active
+ITEM-SYN-0099,6ae45e9c21e1560eaed2426a,ITEM-SYN-0099,Side Wall Tarpaulin Curtain with Windows - Export Quality,tents,Tents & Canopies,2134,Per Piece,75,active
+ITEM-SYN-0100,6ae45e9c21e1560eaed2426b,ITEM-SYN-0100,Side Wall Tarpaulin Curtain with Windows - Festival Special,tents,Tents & Canopies,1124,Per Piece,67,active
+ITEM-SYN-0101,6ae45e9c21e1560eaed2426c,ITEM-SYN-0101,Gold Chiavari Chair with Cushion - Standard Grade,furniture,Banquet & Furniture,252,Per Piece,368,active
+ITEM-SYN-0102,6ae45e9c21e1560eaed2426d,ITEM-SYN-0102,Gold Chiavari Chair with Cushion - Premium Heritage,furniture,Banquet & Furniture,259,Per Piece,251,active
+ITEM-SYN-0103,6ae45e9c21e1560eaed2426e,ITEM-SYN-0103,Gold Chiavari Chair with Cushion - Royal Gold Finish,furniture,Banquet & Furniture,186,Per Piece,470,active
+ITEM-SYN-0104,6ae45e9c21e1560eaed2426f,ITEM-SYN-0104,Gold Chiavari Chair with Cushion - Imperial Series,furniture,Banquet & Furniture,165,Per Piece,386,active
+ITEM-SYN-0105,6ae45e9c21e1560eaed24270,ITEM-SYN-0105,Gold Chiavari Chair with Cushion - Commercial Heavy Duty,furniture,Banquet & Furniture,206,Per Piece,527,active
+ITEM-SYN-0106,6ae45e9c21e1560eaed24271,ITEM-SYN-0106,Gold Chiavari Chair with Cushion - Classic White,furniture,Banquet & Furniture,178,Per Piece,313,active
+ITEM-SYN-0107,6ae45e9c21e1560eaed24272,ITEM-SYN-0107,Gold Chiavari Chair with Cushion - Regal Velvet Edition,furniture,Banquet & Furniture,247,Per Piece,591,active
+ITEM-SYN-0108,6ae45e9c21e1560eaed24273,ITEM-SYN-0108,Gold Chiavari Chair with Cushion - Contemporary Matte,furniture,Banquet & Furniture,224,Per Piece,491,active
+ITEM-SYN-0109,6ae45e9c21e1560eaed24274,ITEM-SYN-0109,Gold Chiavari Chair with Cushion - Export Quality,furniture,Banquet & Furniture,252,Per Piece,256,active
+ITEM-SYN-0110,6ae45e9c21e1560eaed24275,ITEM-SYN-0110,Gold Chiavari Chair with Cushion - Festival Special,furniture,Banquet & Furniture,173,Per Piece,532,active
+ITEM-SYN-0111,6ae45e9c21e1560eaed24276,ITEM-SYN-0111,White Resin Padded Folding Chair - Standard Grade,furniture,Banquet & Furniture,99,Per Piece,408,active
+ITEM-SYN-0112,6ae45e9c21e1560eaed24277,ITEM-SYN-0112,White Resin Padded Folding Chair - Premium Heritage,furniture,Banquet & Furniture,135,Per Piece,562,active
+ITEM-SYN-0113,6ae45e9c21e1560eaed24278,ITEM-SYN-0113,White Resin Padded Folding Chair - Royal Gold Finish,furniture,Banquet & Furniture,116,Per Piece,228,active
+ITEM-SYN-0114,6ae45e9c21e1560eaed24279,ITEM-SYN-0114,White Resin Padded Folding Chair - Imperial Series,furniture,Banquet & Furniture,108,Per Piece,590,active
+ITEM-SYN-0115,6ae45e9c21e1560eaed2427a,ITEM-SYN-0115,White Resin Padded Folding Chair - Commercial Heavy Duty,furniture,Banquet & Furniture,131,Per Piece,438,active
+ITEM-SYN-0116,6ae45e9c21e1560eaed2427b,ITEM-SYN-0116,White Resin Padded Folding Chair - Classic White,furniture,Banquet & Furniture,89,Per Piece,766,active
+ITEM-SYN-0117,6ae45e9c21e1560eaed2427c,ITEM-SYN-0117,White Resin Padded Folding Chair - Regal Velvet Edition,furniture,Banquet & Furniture,78,Per Piece,647,active
+ITEM-SYN-0118,6ae45e9c21e1560eaed2427d,ITEM-SYN-0118,White Resin Padded Folding Chair - Contemporary Matte,furniture,Banquet & Furniture,112,Per Piece,440,active
+ITEM-SYN-0119,6ae45e9c21e1560eaed2427e,ITEM-SYN-0119,White Resin Padded Folding Chair - Export Quality,furniture,Banquet & Furniture,99,Per Piece,693,active
+ITEM-SYN-0120,6ae45e9c21e1560eaed2427f,ITEM-SYN-0120,White Resin Padded Folding Chair - Festival Special,furniture,Banquet & Furniture,64,Per Piece,271,active
+ITEM-SYN-0121,6ae45e9c21e1560eaed24280,ITEM-SYN-0121,Banquet Cushioned Chair with Red/Gold Slipcover - Standard Grade,furniture,Banquet & Furniture,169,Per Piece,1193,active
+ITEM-SYN-0122,6ae45e9c21e1560eaed24281,ITEM-SYN-0122,Banquet Cushioned Chair with Red/Gold Slipcover - Premium Heritage,furniture,Banquet & Furniture,141,Per Piece,1136,active
+ITEM-SYN-0123,6ae45e9c21e1560eaed24282,ITEM-SYN-0123,Banquet Cushioned Chair with Red/Gold Slipcover - Royal Gold Finish,furniture,Banquet & Furniture,121,Per Piece,1178,active
+ITEM-SYN-0124,6ae45e9c21e1560eaed24283,ITEM-SYN-0124,Banquet Cushioned Chair with Red/Gold Slipcover - Imperial Series,furniture,Banquet & Furniture,96,Per Piece,603,active
+ITEM-SYN-0125,6ae45e9c21e1560eaed24284,ITEM-SYN-0125,Banquet Cushioned Chair with Red/Gold Slipcover - Commercial Heavy Duty,furniture,Banquet & Furniture,90,Per Piece,730,active
+ITEM-SYN-0126,6ae45e9c21e1560eaed24285,ITEM-SYN-0126,Banquet Cushioned Chair with Red/Gold Slipcover - Classic White,furniture,Banquet & Furniture,135,Per Piece,685,active
+ITEM-SYN-0127,6ae45e9c21e1560eaed24286,ITEM-SYN-0127,Banquet Cushioned Chair with Red/Gold Slipcover - Regal Velvet Edition,furniture,Banquet & Furniture,178,Per Piece,674,active
+ITEM-SYN-0128,6ae45e9c21e1560eaed24287,ITEM-SYN-0128,Banquet Cushioned Chair with Red/Gold Slipcover - Contemporary Matte,furniture,Banquet & Furniture,158,Per Piece,933,active
+ITEM-SYN-0129,6ae45e9c21e1560eaed24288,ITEM-SYN-0129,Banquet Cushioned Chair with Red/Gold Slipcover - Export Quality,furniture,Banquet & Furniture,108,Per Piece,624,active
+ITEM-SYN-0130,6ae45e9c21e1560eaed24289,ITEM-SYN-0130,Banquet Cushioned Chair with Red/Gold Slipcover - Festival Special,furniture,Banquet & Furniture,89,Per Piece,396,active
+ITEM-SYN-0131,6ae45e9c21e1560eaed2428a,ITEM-SYN-0131,Stainless Steel Banquet Chair (Deluxe) - Standard Grade,furniture,Banquet & Furniture,51,Per Piece,614,active
+ITEM-SYN-0132,6ae45e9c21e1560eaed2428b,ITEM-SYN-0132,Stainless Steel Banquet Chair (Deluxe) - Premium Heritage,furniture,Banquet & Furniture,93,Per Piece,530,active
+ITEM-SYN-0133,6ae45e9c21e1560eaed2428c,ITEM-SYN-0133,Stainless Steel Banquet Chair (Deluxe) - Royal Gold Finish,furniture,Banquet & Furniture,71,Per Piece,433,active
+ITEM-SYN-0134,6ae45e9c21e1560eaed2428d,ITEM-SYN-0134,Stainless Steel Banquet Chair (Deluxe) - Imperial Series,furniture,Banquet & Furniture,69,Per Piece,654,active
+ITEM-SYN-0135,6ae45e9c21e1560eaed2428e,ITEM-SYN-0135,Stainless Steel Banquet Chair (Deluxe) - Commercial Heavy Duty,furniture,Banquet & Furniture,61,Per Piece,781,active
+ITEM-SYN-0136,6ae45e9c21e1560eaed2428f,ITEM-SYN-0136,Stainless Steel Banquet Chair (Deluxe) - Classic White,furniture,Banquet & Furniture,96,Per Piece,577,active
+ITEM-SYN-0137,6ae45e9c21e1560eaed24290,ITEM-SYN-0137,Stainless Steel Banquet Chair (Deluxe) - Regal Velvet Edition,furniture,Banquet & Furniture,53,Per Piece,536,active
+ITEM-SYN-0138,6ae45e9c21e1560eaed24291,ITEM-SYN-0138,Stainless Steel Banquet Chair (Deluxe) - Contemporary Matte,furniture,Banquet & Furniture,93,Per Piece,834,active
+ITEM-SYN-0139,6ae45e9c21e1560eaed24292,ITEM-SYN-0139,Stainless Steel Banquet Chair (Deluxe) - Export Quality,furniture,Banquet & Furniture,72,Per Piece,898,active
+ITEM-SYN-0140,6ae45e9c21e1560eaed24293,ITEM-SYN-0140,Stainless Steel Banquet Chair (Deluxe) - Festival Special,furniture,Banquet & Furniture,81,Per Piece,563,active
+ITEM-SYN-0141,6ae45e9c21e1560eaed24294,ITEM-SYN-0141,Round Banquet Dining Table (5ft / 8-Seater) - Standard Grade,furniture,Banquet & Furniture,410,Per Piece,95,active
+ITEM-SYN-0142,6ae45e9c21e1560eaed24295,ITEM-SYN-0142,Round Banquet Dining Table (5ft / 8-Seater) - Premium Heritage,furniture,Banquet & Furniture,692,Per Piece,90,active
+ITEM-SYN-0143,6ae45e9c21e1560eaed24296,ITEM-SYN-0143,Round Banquet Dining Table (5ft / 8-Seater) - Royal Gold Finish,furniture,Banquet & Furniture,448,Per Piece,105,active
+ITEM-SYN-0144,6ae45e9c21e1560eaed24297,ITEM-SYN-0144,Round Banquet Dining Table (5ft / 8-Seater) - Imperial Series,furniture,Banquet & Furniture,546,Per Piece,131,active
+ITEM-SYN-0145,6ae45e9c21e1560eaed24298,ITEM-SYN-0145,Round Banquet Dining Table (5ft / 8-Seater) - Commercial Heavy Duty,furniture,Banquet & Furniture,438,Per Piece,108,active
+ITEM-SYN-0146,6ae45e9c21e1560eaed24299,ITEM-SYN-0146,Round Banquet Dining Table (5ft / 8-Seater) - Classic White,furniture,Banquet & Furniture,489,Per Piece,57,active
+ITEM-SYN-0147,6ae45e9c21e1560eaed2429a,ITEM-SYN-0147,Round Banquet Dining Table (5ft / 8-Seater) - Regal Velvet Edition,furniture,Banquet & Furniture,563,Per Piece,128,active
+ITEM-SYN-0148,6ae45e9c21e1560eaed2429b,ITEM-SYN-0148,Round Banquet Dining Table (5ft / 8-Seater) - Contemporary Matte,furniture,Banquet & Furniture,450,Per Piece,150,active
+ITEM-SYN-0149,6ae45e9c21e1560eaed2429c,ITEM-SYN-0149,Round Banquet Dining Table (5ft / 8-Seater) - Export Quality,furniture,Banquet & Furniture,634,Per Piece,54,active
+ITEM-SYN-0150,6ae45e9c21e1560eaed2429d,ITEM-SYN-0150,Round Banquet Dining Table (5ft / 8-Seater) - Festival Special,furniture,Banquet & Furniture,606,Per Piece,126,active
+ITEM-SYN-0151,6ae45e9c21e1560eaed2429e,ITEM-SYN-0151,Round Banquet Dining Table (6ft / 10-Seater) - Standard Grade,furniture,Banquet & Furniture,741,Per Piece,40,active
+ITEM-SYN-0152,6ae45e9c21e1560eaed2429f,ITEM-SYN-0152,Round Banquet Dining Table (6ft / 10-Seater) - Premium Heritage,furniture,Banquet & Furniture,535,Per Piece,63,active
+ITEM-SYN-0153,6ae45e9c21e1560eaed242a0,ITEM-SYN-0153,Round Banquet Dining Table (6ft / 10-Seater) - Royal Gold Finish,furniture,Banquet & Furniture,638,Per Piece,86,active
+ITEM-SYN-0154,6ae45e9c21e1560eaed242a1,ITEM-SYN-0154,Round Banquet Dining Table (6ft / 10-Seater) - Imperial Series,furniture,Banquet & Furniture,524,Per Piece,60,active
+ITEM-SYN-0155,6ae45e9c21e1560eaed242a2,ITEM-SYN-0155,Round Banquet Dining Table (6ft / 10-Seater) - Commercial Heavy Duty,furniture,Banquet & Furniture,529,Per Piece,61,active
+ITEM-SYN-0156,6ae45e9c21e1560eaed242a3,ITEM-SYN-0156,Round Banquet Dining Table (6ft / 10-Seater) - Classic White,furniture,Banquet & Furniture,786,Per Piece,55,active
+ITEM-SYN-0157,6ae45e9c21e1560eaed242a4,ITEM-SYN-0157,Round Banquet Dining Table (6ft / 10-Seater) - Regal Velvet Edition,furniture,Banquet & Furniture,1010,Per Piece,93,active
+ITEM-SYN-0158,6ae45e9c21e1560eaed242a5,ITEM-SYN-0158,Round Banquet Dining Table (6ft / 10-Seater) - Contemporary Matte,furniture,Banquet & Furniture,961,Per Piece,91,active
+ITEM-SYN-0159,6ae45e9c21e1560eaed242a6,ITEM-SYN-0159,Round Banquet Dining Table (6ft / 10-Seater) - Export Quality,furniture,Banquet & Furniture,795,Per Piece,56,active
+ITEM-SYN-0160,6ae45e9c21e1560eaed242a7,ITEM-SYN-0160,Round Banquet Dining Table (6ft / 10-Seater) - Festival Special,furniture,Banquet & Furniture,817,Per Piece,43,active
+ITEM-SYN-0161,6ae45e9c21e1560eaed242a8,ITEM-SYN-0161,Rectangular Buffet Folding Table (6x2.5 ft) - Standard Grade,furniture,Banquet & Furniture,308,Per Piece,159,active
+ITEM-SYN-0162,6ae45e9c21e1560eaed242a9,ITEM-SYN-0162,Rectangular Buffet Folding Table (6x2.5 ft) - Premium Heritage,furniture,Banquet & Furniture,394,Per Piece,103,active
+ITEM-SYN-0163,6ae45e9c21e1560eaed242aa,ITEM-SYN-0163,Rectangular Buffet Folding Table (6x2.5 ft) - Royal Gold Finish,furniture,Banquet & Furniture,542,Per Piece,89,active
+ITEM-SYN-0164,6ae45e9c21e1560eaed242ab,ITEM-SYN-0164,Rectangular Buffet Folding Table (6x2.5 ft) - Imperial Series,furniture,Banquet & Furniture,370,Per Piece,52,active
+ITEM-SYN-0165,6ae45e9c21e1560eaed242ac,ITEM-SYN-0165,Rectangular Buffet Folding Table (6x2.5 ft) - Commercial Heavy Duty,furniture,Banquet & Furniture,360,Per Piece,53,active
+ITEM-SYN-0166,6ae45e9c21e1560eaed242ad,ITEM-SYN-0166,Rectangular Buffet Folding Table (6x2.5 ft) - Classic White,furniture,Banquet & Furniture,391,Per Piece,178,active
+ITEM-SYN-0167,6ae45e9c21e1560eaed242ae,ITEM-SYN-0167,Rectangular Buffet Folding Table (6x2.5 ft) - Regal Velvet Edition,furniture,Banquet & Furniture,388,Per Piece,67,active
+ITEM-SYN-0168,6ae45e9c21e1560eaed242af,ITEM-SYN-0168,Rectangular Buffet Folding Table (6x2.5 ft) - Contemporary Matte,furniture,Banquet & Furniture,586,Per Piece,144,active
+ITEM-SYN-0169,6ae45e9c21e1560eaed242b0,ITEM-SYN-0169,Rectangular Buffet Folding Table (6x2.5 ft) - Export Quality,furniture,Banquet & Furniture,487,Per Piece,104,active
+ITEM-SYN-0170,6ae45e9c21e1560eaed242b1,ITEM-SYN-0170,Rectangular Buffet Folding Table (6x2.5 ft) - Festival Special,furniture,Banquet & Furniture,342,Per Piece,171,active
+ITEM-SYN-0171,6ae45e9c21e1560eaed242b2,ITEM-SYN-0171,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Standard Grade,furniture,Banquet & Furniture,10528,Per Setup,5,active
+ITEM-SYN-0172,6ae45e9c21e1560eaed242b3,ITEM-SYN-0172,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Premium Heritage,furniture,Banquet & Furniture,6220,Per Setup,5,active
+ITEM-SYN-0173,6ae45e9c21e1560eaed242b4,ITEM-SYN-0173,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Royal Gold Finish,furniture,Banquet & Furniture,11062,Per Setup,13,active
+ITEM-SYN-0174,6ae45e9c21e1560eaed242b5,ITEM-SYN-0174,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Imperial Series,furniture,Banquet & Furniture,9884,Per Setup,7,active
+ITEM-SYN-0175,6ae45e9c21e1560eaed242b6,ITEM-SYN-0175,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Commercial Heavy Duty,furniture,Banquet & Furniture,11530,Per Setup,9,active
+ITEM-SYN-0176,6ae45e9c21e1560eaed242b7,ITEM-SYN-0176,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Classic White,furniture,Banquet & Furniture,8882,Per Setup,9,active
+ITEM-SYN-0177,6ae45e9c21e1560eaed242b8,ITEM-SYN-0177,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Regal Velvet Edition,furniture,Banquet & Furniture,7897,Per Setup,6,active
+ITEM-SYN-0178,6ae45e9c21e1560eaed242b9,ITEM-SYN-0178,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Contemporary Matte,furniture,Banquet & Furniture,9681,Per Setup,13,active
+ITEM-SYN-0179,6ae45e9c21e1560eaed242ba,ITEM-SYN-0179,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Export Quality,furniture,Banquet & Furniture,5828,Per Setup,8,active
+ITEM-SYN-0180,6ae45e9c21e1560eaed242bb,ITEM-SYN-0180,Maharaja Royal Throne Sofa Set (2-Seater + 2 Chairs) - Festival Special,furniture,Banquet & Furniture,10156,Per Setup,4,active
+ITEM-SYN-0181,6ae45e9c21e1560eaed242bc,ITEM-SYN-0181,Contemporary Chesterfield Velvet Lounge Sofa - Standard Grade,furniture,Banquet & Furniture,5448,Per Piece,9,active
+ITEM-SYN-0182,6ae45e9c21e1560eaed242bd,ITEM-SYN-0182,Contemporary Chesterfield Velvet Lounge Sofa - Premium Heritage,furniture,Banquet & Furniture,4802,Per Piece,24,active
+ITEM-SYN-0183,6ae45e9c21e1560eaed242be,ITEM-SYN-0183,Contemporary Chesterfield Velvet Lounge Sofa - Royal Gold Finish,furniture,Banquet & Furniture,8625,Per Piece,13,active
+ITEM-SYN-0184,6ae45e9c21e1560eaed242bf,ITEM-SYN-0184,Contemporary Chesterfield Velvet Lounge Sofa - Imperial Series,furniture,Banquet & Furniture,5803,Per Piece,16,active
+ITEM-SYN-0185,6ae45e9c21e1560eaed242c0,ITEM-SYN-0185,Contemporary Chesterfield Velvet Lounge Sofa - Commercial Heavy Duty,furniture,Banquet & Furniture,4807,Per Piece,11,active
+ITEM-SYN-0186,6ae45e9c21e1560eaed242c1,ITEM-SYN-0186,Contemporary Chesterfield Velvet Lounge Sofa - Classic White,furniture,Banquet & Furniture,5383,Per Piece,13,active
+ITEM-SYN-0187,6ae45e9c21e1560eaed242c2,ITEM-SYN-0187,Contemporary Chesterfield Velvet Lounge Sofa - Regal Velvet Edition,furniture,Banquet & Furniture,7357,Per Piece,12,active
+ITEM-SYN-0188,6ae45e9c21e1560eaed242c3,ITEM-SYN-0188,Contemporary Chesterfield Velvet Lounge Sofa - Contemporary Matte,furniture,Banquet & Furniture,6735,Per Piece,14,active
+ITEM-SYN-0189,6ae45e9c21e1560eaed242c4,ITEM-SYN-0189,Contemporary Chesterfield Velvet Lounge Sofa - Export Quality,furniture,Banquet & Furniture,6828,Per Piece,16,active
+ITEM-SYN-0190,6ae45e9c21e1560eaed242c5,ITEM-SYN-0190,Contemporary Chesterfield Velvet Lounge Sofa - Festival Special,furniture,Banquet & Furniture,8248,Per Piece,8,active
+ITEM-SYN-0191,6ae45e9c21e1560eaed242c6,ITEM-SYN-0191,Traditional Baithak Low-Height Diwan with Bolsters - Standard Grade,furniture,Banquet & Furniture,2305,Per Setup,32,active
+ITEM-SYN-0192,6ae45e9c21e1560eaed242c7,ITEM-SYN-0192,Traditional Baithak Low-Height Diwan with Bolsters - Premium Heritage,furniture,Banquet & Furniture,1378,Per Setup,38,active
+ITEM-SYN-0193,6ae45e9c21e1560eaed242c8,ITEM-SYN-0193,Traditional Baithak Low-Height Diwan with Bolsters - Royal Gold Finish,furniture,Banquet & Furniture,3096,Per Setup,24,active
+ITEM-SYN-0194,6ae45e9c21e1560eaed242c9,ITEM-SYN-0194,Traditional Baithak Low-Height Diwan with Bolsters - Imperial Series,furniture,Banquet & Furniture,1382,Per Setup,29,active
+ITEM-SYN-0195,6ae45e9c21e1560eaed242ca,ITEM-SYN-0195,Traditional Baithak Low-Height Diwan with Bolsters - Commercial Heavy Duty,furniture,Banquet & Furniture,1847,Per Setup,31,active
+ITEM-SYN-0196,6ae45e9c21e1560eaed242cb,ITEM-SYN-0196,Traditional Baithak Low-Height Diwan with Bolsters - Classic White,furniture,Banquet & Furniture,2739,Per Setup,31,active
+ITEM-SYN-0197,6ae45e9c21e1560eaed242cc,ITEM-SYN-0197,Traditional Baithak Low-Height Diwan with Bolsters - Regal Velvet Edition,furniture,Banquet & Furniture,2896,Per Setup,23,active
+ITEM-SYN-0198,6ae45e9c21e1560eaed242cd,ITEM-SYN-0198,Traditional Baithak Low-Height Diwan with Bolsters - Contemporary Matte,furniture,Banquet & Furniture,1861,Per Setup,26,active
+ITEM-SYN-0199,6ae45e9c21e1560eaed242ce,ITEM-SYN-0199,Traditional Baithak Low-Height Diwan with Bolsters - Export Quality,furniture,Banquet & Furniture,1234,Per Setup,32,active
+ITEM-SYN-0200,6ae45e9c21e1560eaed242cf,ITEM-SYN-0200,Traditional Baithak Low-Height Diwan with Bolsters - Festival Special,furniture,Banquet & Furniture,2903,Per Setup,36,active
+ITEM-SYN-0201,6ae45e9c21e1560eaed242d0,ITEM-SYN-0201,Cocktail High-Top Bar Table with Lycra Cover - Standard Grade,furniture,Banquet & Furniture,509,Per Piece,46,active
+ITEM-SYN-0202,6ae45e9c21e1560eaed242d1,ITEM-SYN-0202,Cocktail High-Top Bar Table with Lycra Cover - Premium Heritage,furniture,Banquet & Furniture,928,Per Piece,23,active
+ITEM-SYN-0203,6ae45e9c21e1560eaed242d2,ITEM-SYN-0203,Cocktail High-Top Bar Table with Lycra Cover - Royal Gold Finish,furniture,Banquet & Furniture,751,Per Piece,36,active
+ITEM-SYN-0204,6ae45e9c21e1560eaed242d3,ITEM-SYN-0204,Cocktail High-Top Bar Table with Lycra Cover - Imperial Series,furniture,Banquet & Furniture,820,Per Piece,52,active
+ITEM-SYN-0205,6ae45e9c21e1560eaed242d4,ITEM-SYN-0205,Cocktail High-Top Bar Table with Lycra Cover - Commercial Heavy Duty,furniture,Banquet & Furniture,600,Per Piece,31,active
+ITEM-SYN-0206,6ae45e9c21e1560eaed242d5,ITEM-SYN-0206,Cocktail High-Top Bar Table with Lycra Cover - Classic White,furniture,Banquet & Furniture,832,Per Piece,51,active
+ITEM-SYN-0207,6ae45e9c21e1560eaed242d6,ITEM-SYN-0207,Cocktail High-Top Bar Table with Lycra Cover - Regal Velvet Edition,furniture,Banquet & Furniture,662,Per Piece,58,active
+ITEM-SYN-0208,6ae45e9c21e1560eaed242d7,ITEM-SYN-0208,Cocktail High-Top Bar Table with Lycra Cover - Contemporary Matte,furniture,Banquet & Furniture,770,Per Piece,57,active
+ITEM-SYN-0209,6ae45e9c21e1560eaed242d8,ITEM-SYN-0209,Cocktail High-Top Bar Table with Lycra Cover - Export Quality,furniture,Banquet & Furniture,470,Per Piece,59,active
+ITEM-SYN-0210,6ae45e9c21e1560eaed242d9,ITEM-SYN-0210,Cocktail High-Top Bar Table with Lycra Cover - Festival Special,furniture,Banquet & Furniture,745,Per Piece,21,active
+ITEM-SYN-0211,6ae45e9c21e1560eaed242da,ITEM-SYN-0211,LED Illuminated Bar Stool - Standard Grade,furniture,Banquet & Furniture,532,Per Piece,68,active
+ITEM-SYN-0212,6ae45e9c21e1560eaed242db,ITEM-SYN-0212,LED Illuminated Bar Stool - Premium Heritage,furniture,Banquet & Furniture,696,Per Piece,67,active
+ITEM-SYN-0213,6ae45e9c21e1560eaed242dc,ITEM-SYN-0213,LED Illuminated Bar Stool - Royal Gold Finish,furniture,Banquet & Furniture,682,Per Piece,58,active
+ITEM-SYN-0214,6ae45e9c21e1560eaed242dd,ITEM-SYN-0214,LED Illuminated Bar Stool - Imperial Series,furniture,Banquet & Furniture,401,Per Piece,66,active
+ITEM-SYN-0215,6ae45e9c21e1560eaed242de,ITEM-SYN-0215,LED Illuminated Bar Stool - Commercial Heavy Duty,furniture,Banquet & Furniture,613,Per Piece,31,active
+ITEM-SYN-0216,6ae45e9c21e1560eaed242df,ITEM-SYN-0216,LED Illuminated Bar Stool - Classic White,furniture,Banquet & Furniture,431,Per Piece,57,active
+ITEM-SYN-0217,6ae45e9c21e1560eaed242e0,ITEM-SYN-0217,LED Illuminated Bar Stool - Regal Velvet Edition,furniture,Banquet & Furniture,359,Per Piece,36,active
+ITEM-SYN-0218,6ae45e9c21e1560eaed242e1,ITEM-SYN-0218,LED Illuminated Bar Stool - Contemporary Matte,furniture,Banquet & Furniture,367,Per Piece,52,active
+ITEM-SYN-0219,6ae45e9c21e1560eaed242e2,ITEM-SYN-0219,LED Illuminated Bar Stool - Export Quality,furniture,Banquet & Furniture,506,Per Piece,33,active
+ITEM-SYN-0220,6ae45e9c21e1560eaed242e3,ITEM-SYN-0220,LED Illuminated Bar Stool - Festival Special,furniture,Banquet & Furniture,686,Per Piece,26,active
+ITEM-SYN-0221,6ae45e9c21e1560eaed242e4,ITEM-SYN-0221,VIP Wooden Executive Chair with Armrest - Standard Grade,furniture,Banquet & Furniture,392,Per Piece,32,active
+ITEM-SYN-0222,6ae45e9c21e1560eaed242e5,ITEM-SYN-0222,VIP Wooden Executive Chair with Armrest - Premium Heritage,furniture,Banquet & Furniture,579,Per Piece,36,active
+ITEM-SYN-0223,6ae45e9c21e1560eaed242e6,ITEM-SYN-0223,VIP Wooden Executive Chair with Armrest - Royal Gold Finish,furniture,Banquet & Furniture,499,Per Piece,41,active
+ITEM-SYN-0224,6ae45e9c21e1560eaed242e7,ITEM-SYN-0224,VIP Wooden Executive Chair with Armrest - Imperial Series,furniture,Banquet & Furniture,375,Per Piece,79,active
+ITEM-SYN-0225,6ae45e9c21e1560eaed242e8,ITEM-SYN-0225,VIP Wooden Executive Chair with Armrest - Commercial Heavy Duty,furniture,Banquet & Furniture,516,Per Piece,39,active
+ITEM-SYN-0226,6ae45e9c21e1560eaed242e9,ITEM-SYN-0226,VIP Wooden Executive Chair with Armrest - Classic White,furniture,Banquet & Furniture,594,Per Piece,33,active
+ITEM-SYN-0227,6ae45e9c21e1560eaed242ea,ITEM-SYN-0227,VIP Wooden Executive Chair with Armrest - Regal Velvet Edition,furniture,Banquet & Furniture,534,Per Piece,53,active
+ITEM-SYN-0228,6ae45e9c21e1560eaed242eb,ITEM-SYN-0228,VIP Wooden Executive Chair with Armrest - Contemporary Matte,furniture,Banquet & Furniture,440,Per Piece,88,active
+ITEM-SYN-0229,6ae45e9c21e1560eaed242ec,ITEM-SYN-0229,VIP Wooden Executive Chair with Armrest - Export Quality,furniture,Banquet & Furniture,623,Per Piece,71,active
+ITEM-SYN-0230,6ae45e9c21e1560eaed242ed,ITEM-SYN-0230,VIP Wooden Executive Chair with Armrest - Festival Special,furniture,Banquet & Furniture,414,Per Piece,87,active
+ITEM-SYN-0231,6ae45e9c21e1560eaed242ee,ITEM-SYN-0231,Classic Wooden Coffee Table - Standard Grade,furniture,Banquet & Furniture,475,Per Piece,25,active
+ITEM-SYN-0232,6ae45e9c21e1560eaed242ef,ITEM-SYN-0232,Classic Wooden Coffee Table - Premium Heritage,furniture,Banquet & Furniture,382,Per Piece,24,active
+ITEM-SYN-0233,6ae45e9c21e1560eaed242f0,ITEM-SYN-0233,Classic Wooden Coffee Table - Royal Gold Finish,furniture,Banquet & Furniture,491,Per Piece,33,active
+ITEM-SYN-0234,6ae45e9c21e1560eaed242f1,ITEM-SYN-0234,Classic Wooden Coffee Table - Imperial Series,furniture,Banquet & Furniture,342,Per Piece,23,active
+ITEM-SYN-0235,6ae45e9c21e1560eaed242f2,ITEM-SYN-0235,Classic Wooden Coffee Table - Commercial Heavy Duty,furniture,Banquet & Furniture,409,Per Piece,32,active
+ITEM-SYN-0236,6ae45e9c21e1560eaed242f3,ITEM-SYN-0236,Classic Wooden Coffee Table - Classic White,furniture,Banquet & Furniture,211,Per Piece,21,active
+ITEM-SYN-0237,6ae45e9c21e1560eaed242f4,ITEM-SYN-0237,Classic Wooden Coffee Table - Regal Velvet Edition,furniture,Banquet & Furniture,368,Per Piece,26,active
+ITEM-SYN-0238,6ae45e9c21e1560eaed242f5,ITEM-SYN-0238,Classic Wooden Coffee Table - Contemporary Matte,furniture,Banquet & Furniture,478,Per Piece,29,active
+ITEM-SYN-0239,6ae45e9c21e1560eaed242f6,ITEM-SYN-0239,Classic Wooden Coffee Table - Export Quality,furniture,Banquet & Furniture,297,Per Piece,45,active
+ITEM-SYN-0240,6ae45e9c21e1560eaed242f7,ITEM-SYN-0240,Classic Wooden Coffee Table - Festival Special,furniture,Banquet & Furniture,428,Per Piece,38,active
+ITEM-SYN-0241,6ae45e9c21e1560eaed242f8,ITEM-SYN-0241,Bohemian Crystal Chandelier (3-Tier) - Standard Grade,lighting,Decorative Lighting,7498,Per Setup,22,active
+ITEM-SYN-0242,6ae45e9c21e1560eaed242f9,ITEM-SYN-0242,Bohemian Crystal Chandelier (3-Tier) - Premium Heritage,lighting,Decorative Lighting,5055,Per Setup,10,active
+ITEM-SYN-0243,6ae45e9c21e1560eaed242fa,ITEM-SYN-0243,Bohemian Crystal Chandelier (3-Tier) - Royal Gold Finish,lighting,Decorative Lighting,6860,Per Setup,10,active
+ITEM-SYN-0244,6ae45e9c21e1560eaed242fb,ITEM-SYN-0244,Bohemian Crystal Chandelier (3-Tier) - Imperial Series,lighting,Decorative Lighting,3007,Per Setup,19,active
+ITEM-SYN-0245,6ae45e9c21e1560eaed242fc,ITEM-SYN-0245,Bohemian Crystal Chandelier (3-Tier) - Commercial Heavy Duty,lighting,Decorative Lighting,3786,Per Setup,18,active
+ITEM-SYN-0246,6ae45e9c21e1560eaed242fd,ITEM-SYN-0246,Bohemian Crystal Chandelier (3-Tier) - Classic White,lighting,Decorative Lighting,3821,Per Setup,10,active
+ITEM-SYN-0247,6ae45e9c21e1560eaed242fe,ITEM-SYN-0247,Bohemian Crystal Chandelier (3-Tier) - Regal Velvet Edition,lighting,Decorative Lighting,5941,Per Setup,24,active
+ITEM-SYN-0248,6ae45e9c21e1560eaed242ff,ITEM-SYN-0248,Bohemian Crystal Chandelier (3-Tier) - Contemporary Matte,lighting,Decorative Lighting,2946,Per Setup,18,active
+ITEM-SYN-0249,6ae45e9c21e1560eaed24300,ITEM-SYN-0249,Bohemian Crystal Chandelier (3-Tier) - Export Quality,lighting,Decorative Lighting,5899,Per Setup,20,active
+ITEM-SYN-0250,6ae45e9c21e1560eaed24301,ITEM-SYN-0250,Bohemian Crystal Chandelier (3-Tier) - Festival Special,lighting,Decorative Lighting,2983,Per Setup,19,active
+ITEM-SYN-0251,6ae45e9c21e1560eaed24302,ITEM-SYN-0251,Vintage Brass Chandelier (5-Arm) - Standard Grade,lighting,Decorative Lighting,5581,Per Setup,12,active
+ITEM-SYN-0252,6ae45e9c21e1560eaed24303,ITEM-SYN-0252,Vintage Brass Chandelier (5-Arm) - Premium Heritage,lighting,Decorative Lighting,7752,Per Setup,10,active
+ITEM-SYN-0253,6ae45e9c21e1560eaed24304,ITEM-SYN-0253,Vintage Brass Chandelier (5-Arm) - Royal Gold Finish,lighting,Decorative Lighting,4404,Per Setup,17,active
+ITEM-SYN-0254,6ae45e9c21e1560eaed24305,ITEM-SYN-0254,Vintage Brass Chandelier (5-Arm) - Imperial Series,lighting,Decorative Lighting,8715,Per Setup,19,active
+ITEM-SYN-0255,6ae45e9c21e1560eaed24306,ITEM-SYN-0255,Vintage Brass Chandelier (5-Arm) - Commercial Heavy Duty,lighting,Decorative Lighting,7706,Per Setup,7,active
+ITEM-SYN-0256,6ae45e9c21e1560eaed24307,ITEM-SYN-0256,Vintage Brass Chandelier (5-Arm) - Classic White,lighting,Decorative Lighting,4413,Per Setup,12,active
+ITEM-SYN-0257,6ae45e9c21e1560eaed24308,ITEM-SYN-0257,Vintage Brass Chandelier (5-Arm) - Regal Velvet Edition,lighting,Decorative Lighting,6346,Per Setup,16,active
+ITEM-SYN-0258,6ae45e9c21e1560eaed24309,ITEM-SYN-0258,Vintage Brass Chandelier (5-Arm) - Contemporary Matte,lighting,Decorative Lighting,5635,Per Setup,12,active
+ITEM-SYN-0259,6ae45e9c21e1560eaed2430a,ITEM-SYN-0259,Vintage Brass Chandelier (5-Arm) - Export Quality,lighting,Decorative Lighting,6033,Per Setup,15,active
+ITEM-SYN-0260,6ae45e9c21e1560eaed2430b,ITEM-SYN-0260,Vintage Brass Chandelier (5-Arm) - Festival Special,lighting,Decorative Lighting,5900,Per Setup,17,active
+ITEM-SYN-0261,6ae45e9c21e1560eaed2430c,ITEM-SYN-0261,LED RGB Par Can Uplight (54W) - Standard Grade,lighting,Decorative Lighting,425,Per Piece,68,active
+ITEM-SYN-0262,6ae45e9c21e1560eaed2430d,ITEM-SYN-0262,LED RGB Par Can Uplight (54W) - Premium Heritage,lighting,Decorative Lighting,358,Per Piece,105,active
+ITEM-SYN-0263,6ae45e9c21e1560eaed2430e,ITEM-SYN-0263,LED RGB Par Can Uplight (54W) - Royal Gold Finish,lighting,Decorative Lighting,328,Per Piece,147,active
+ITEM-SYN-0264,6ae45e9c21e1560eaed2430f,ITEM-SYN-0264,LED RGB Par Can Uplight (54W) - Imperial Series,lighting,Decorative Lighting,434,Per Piece,176,active
+ITEM-SYN-0265,6ae45e9c21e1560eaed24310,ITEM-SYN-0265,LED RGB Par Can Uplight (54W) - Commercial Heavy Duty,lighting,Decorative Lighting,297,Per Piece,126,active
+ITEM-SYN-0266,6ae45e9c21e1560eaed24311,ITEM-SYN-0266,LED RGB Par Can Uplight (54W) - Classic White,lighting,Decorative Lighting,412,Per Piece,81,active
+ITEM-SYN-0267,6ae45e9c21e1560eaed24312,ITEM-SYN-0267,LED RGB Par Can Uplight (54W) - Regal Velvet Edition,lighting,Decorative Lighting,415,Per Piece,91,active
+ITEM-SYN-0268,6ae45e9c21e1560eaed24313,ITEM-SYN-0268,LED RGB Par Can Uplight (54W) - Contemporary Matte,lighting,Decorative Lighting,228,Per Piece,129,active
+ITEM-SYN-0269,6ae45e9c21e1560eaed24314,ITEM-SYN-0269,LED RGB Par Can Uplight (54W) - Export Quality,lighting,Decorative Lighting,336,Per Piece,84,active
+ITEM-SYN-0270,6ae45e9c21e1560eaed24315,ITEM-SYN-0270,LED RGB Par Can Uplight (54W) - Festival Special,lighting,Decorative Lighting,440,Per Piece,127,active
+ITEM-SYN-0271,6ae45e9c21e1560eaed24316,ITEM-SYN-0271,Outdoor Halogen Floodlight (500W/1000W) - Standard Grade,lighting,Decorative Lighting,497,Per Piece,48,active
+ITEM-SYN-0272,6ae45e9c21e1560eaed24317,ITEM-SYN-0272,Outdoor Halogen Floodlight (500W/1000W) - Premium Heritage,lighting,Decorative Lighting,528,Per Piece,46,active
+ITEM-SYN-0273,6ae45e9c21e1560eaed24318,ITEM-SYN-0273,Outdoor Halogen Floodlight (500W/1000W) - Royal Gold Finish,lighting,Decorative Lighting,408,Per Piece,82,active
+ITEM-SYN-0274,6ae45e9c21e1560eaed24319,ITEM-SYN-0274,Outdoor Halogen Floodlight (500W/1000W) - Imperial Series,lighting,Decorative Lighting,530,Per Piece,107,active
+ITEM-SYN-0275,6ae45e9c21e1560eaed2431a,ITEM-SYN-0275,Outdoor Halogen Floodlight (500W/1000W) - Commercial Heavy Duty,lighting,Decorative Lighting,528,Per Piece,62,active
+ITEM-SYN-0276,6ae45e9c21e1560eaed2431b,ITEM-SYN-0276,Outdoor Halogen Floodlight (500W/1000W) - Classic White,lighting,Decorative Lighting,262,Per Piece,107,active
+ITEM-SYN-0277,6ae45e9c21e1560eaed2431c,ITEM-SYN-0277,Outdoor Halogen Floodlight (500W/1000W) - Regal Velvet Edition,lighting,Decorative Lighting,340,Per Piece,103,active
+ITEM-SYN-0278,6ae45e9c21e1560eaed2431d,ITEM-SYN-0278,Outdoor Halogen Floodlight (500W/1000W) - Contemporary Matte,lighting,Decorative Lighting,277,Per Piece,118,active
+ITEM-SYN-0279,6ae45e9c21e1560eaed2431e,ITEM-SYN-0279,Outdoor Halogen Floodlight (500W/1000W) - Export Quality,lighting,Decorative Lighting,378,Per Piece,109,active
+ITEM-SYN-0280,6ae45e9c21e1560eaed2431f,ITEM-SYN-0280,Outdoor Halogen Floodlight (500W/1000W) - Festival Special,lighting,Decorative Lighting,255,Per Piece,112,active
+ITEM-SYN-0281,6ae45e9c21e1560eaed24320,ITEM-SYN-0281,Warm White Fairy String Lights (100-meter Roll) - Standard Grade,lighting,Decorative Lighting,645,Per Piece,44,active
+ITEM-SYN-0282,6ae45e9c21e1560eaed24321,ITEM-SYN-0282,Warm White Fairy String Lights (100-meter Roll) - Premium Heritage,lighting,Decorative Lighting,739,Per Piece,82,active
+ITEM-SYN-0283,6ae45e9c21e1560eaed24322,ITEM-SYN-0283,Warm White Fairy String Lights (100-meter Roll) - Royal Gold Finish,lighting,Decorative Lighting,1152,Per Piece,41,active
+ITEM-SYN-0284,6ae45e9c21e1560eaed24323,ITEM-SYN-0284,Warm White Fairy String Lights (100-meter Roll) - Imperial Series,lighting,Decorative Lighting,497,Per Piece,57,active
+ITEM-SYN-0285,6ae45e9c21e1560eaed24324,ITEM-SYN-0285,Warm White Fairy String Lights (100-meter Roll) - Commercial Heavy Duty,lighting,Decorative Lighting,970,Per Piece,43,active
+ITEM-SYN-0286,6ae45e9c21e1560eaed24325,ITEM-SYN-0286,Warm White Fairy String Lights (100-meter Roll) - Classic White,lighting,Decorative Lighting,621,Per Piece,46,active
+ITEM-SYN-0287,6ae45e9c21e1560eaed24326,ITEM-SYN-0287,Warm White Fairy String Lights (100-meter Roll) - Regal Velvet Edition,lighting,Decorative Lighting,402,Per Piece,70,active
+ITEM-SYN-0288,6ae45e9c21e1560eaed24327,ITEM-SYN-0288,Warm White Fairy String Lights (100-meter Roll) - Contemporary Matte,lighting,Decorative Lighting,663,Per Piece,30,active
+ITEM-SYN-0289,6ae45e9c21e1560eaed24328,ITEM-SYN-0289,Warm White Fairy String Lights (100-meter Roll) - Export Quality,lighting,Decorative Lighting,817,Per Piece,38,active
+ITEM-SYN-0290,6ae45e9c21e1560eaed24329,ITEM-SYN-0290,Warm White Fairy String Lights (100-meter Roll) - Festival Special,lighting,Decorative Lighting,677,Per Piece,56,active
+ITEM-SYN-0291,6ae45e9c21e1560eaed2432a,ITEM-SYN-0291,Moving Head Beam Spot Light (Sharpy 7R) - Standard Grade,lighting,Decorative Lighting,2524,Per Piece,32,active
+ITEM-SYN-0292,6ae45e9c21e1560eaed2432b,ITEM-SYN-0292,Moving Head Beam Spot Light (Sharpy 7R) - Premium Heritage,lighting,Decorative Lighting,4080,Per Piece,15,active
+ITEM-SYN-0293,6ae45e9c21e1560eaed2432c,ITEM-SYN-0293,Moving Head Beam Spot Light (Sharpy 7R) - Royal Gold Finish,lighting,Decorative Lighting,2569,Per Piece,12,active
+ITEM-SYN-0294,6ae45e9c21e1560eaed2432d,ITEM-SYN-0294,Moving Head Beam Spot Light (Sharpy 7R) - Imperial Series,lighting,Decorative Lighting,4397,Per Piece,23,active
+ITEM-SYN-0295,6ae45e9c21e1560eaed2432e,ITEM-SYN-0295,Moving Head Beam Spot Light (Sharpy 7R) - Commercial Heavy Duty,lighting,Decorative Lighting,4065,Per Piece,17,active
+ITEM-SYN-0296,6ae45e9c21e1560eaed2432f,ITEM-SYN-0296,Moving Head Beam Spot Light (Sharpy 7R) - Classic White,lighting,Decorative Lighting,3274,Per Piece,21,active
+ITEM-SYN-0297,6ae45e9c21e1560eaed24330,ITEM-SYN-0297,Moving Head Beam Spot Light (Sharpy 7R) - Regal Velvet Edition,lighting,Decorative Lighting,3129,Per Piece,27,active
+ITEM-SYN-0298,6ae45e9c21e1560eaed24331,ITEM-SYN-0298,Moving Head Beam Spot Light (Sharpy 7R) - Contemporary Matte,lighting,Decorative Lighting,2070,Per Piece,33,active
+ITEM-SYN-0299,6ae45e9c21e1560eaed24332,ITEM-SYN-0299,Moving Head Beam Spot Light (Sharpy 7R) - Export Quality,lighting,Decorative Lighting,1870,Per Piece,17,active
+ITEM-SYN-0300,6ae45e9c21e1560eaed24333,ITEM-SYN-0300,Moving Head Beam Spot Light (Sharpy 7R) - Festival Special,lighting,Decorative Lighting,3158,Per Piece,31,active

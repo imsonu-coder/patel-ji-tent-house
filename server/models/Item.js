@@ -30,12 +30,29 @@ const itemSchema = new mongoose.Schema(
     ownStock: {
       type: Number,
       default: 0,
-      min: 0
+      min: 0,
+      validate: Number.isInteger
+    },
+    inventoryVersion: {
+      type: Number,
+      default: 0,
+      min: 0,
+      validate: Number.isInteger
     },
     status: {
       type: String,
       enum: ['active', 'inactive'],
       default: 'active'
+    },
+    isSynthetic: {
+      type: Boolean,
+      default: false,
+      index: true
+    },
+    syntheticId: {
+      type: String,
+      sparse: true,
+      index: true
     }
   },
   { timestamps: true }
